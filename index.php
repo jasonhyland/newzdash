@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<?php include('config.php'); ?>
+
 <html lang="en">
 <head>
 	<!--
@@ -55,7 +57,7 @@
 </head>
 
 <body>
-<?php include('includes/topbar.php'); ?>
+<?php include 'includes/topbar.php'; ?>
 
 		<div class="container-fluid">
 		<div class="row-fluid">
@@ -85,158 +87,275 @@
 			</div>
 			<!-- breadcrumbs end -->
 			
-			<div class="sortable row-fluid">
-				<a data-rel="tooltip" title="6 new members." class="well span3 top-block" href="#">
+			<!-- Dashboard summaries start -->
+			<div class="row-fluid">
+				<a data-rel="tooltip" title="6 new members." class="well span4 top-block" href="#">
 					<span class="icon32 icon-red icon-user"></span>
-					<div>Total Members</div>
-					<div>507</div>
+					<div>Total Releases</div>
+					<div>123456</div>
 					<span class="notification">6</span>
 				</a>
 
-				<a data-rel="tooltip" title="new pro members." class="well span3 top-block" href="#">
+				<a data-rel="tooltip" title="new pro members." class="well span4 top-block" href="#">
 					<span class="icon32 icon-color icon-star-on"></span>
-					<div>Pro Members</div>
-					<div>228</div>
+					<div>Total Groups</div>
+					<div>28</div>
 					<span class="notification green">new</span>
 				</a>
 
-				<a data-rel="tooltip" title="$34 new sales." class="well span3 top-block" href="#">
+				<a data-rel="tooltip" title="$34 new sales." class="well span4 top-block" href="#">
 					<span class="icon32 icon-color icon-cart"></span>
-					<div>Sales</div>
-					<div>$13320</div>
-					<span class="notification yellow">$34</span>
+					<div>Pending Processing</div>
+					<div>320</div>
+					<span class="notification yellow">34</span>
 				</a>
-				
+				<!--
 				<a data-rel="tooltip" title="12 new messages." class="well span3 top-block" href="#">
 					<span class="icon32 icon-color icon-envelope-closed"></span>
-					<div>Messages</div>
+					<div>foobar</div>
 					<div>25</div>
 					<span class="notification red">12</span>
 				</a>
+				-->
 			</div>
+			<!-- Dashboard summaries end -->			
 			
+					
 			<div class="row-fluid">
-				<div class="box span12">
-					<div class="box-header well">
-						<h2><i class="icon-info-sign"></i> Introduction</h2>
+				<div class="box span4">
+					<div class="box-header well" data-original-title>
+						<h2><i class="icon-th"></i> Releases</h2>
 						<div class="box-icon">
-							<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
+						  <!--
 							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
 							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+						-->
 						</div>
 					</div>
 					<div class="box-content">
-						<h1>Charisma <small>free, premium quality, responsive, multiple skin admin template.</small></h1>
-						<p>Its a live demo of the template. I have created Charisma to ease the repeat work I have to do on my projects. Now I re-use Charisma as a base for my admin panel work and I am sharing it with you :)</p>
-						<p><b>All pages in the menu are functional, take a look at all, please share this with your followers.</b></p>
-						
-						<p class="center">
-							<a href="http://usman.it/free-responsive-admin-template" class="btn btn-large btn-primary"><i class="icon-chevron-left icon-white"></i> Back to article</a> 
-							<a href="http://usman.it/free-responsive-admin-template" class="btn btn-large"><i class="icon-download-alt"></i> Download Page</a>
-						</p>
-						<div class="clearfix"></div>
+						<table class="table">
+							  <thead>
+								  <tr>
+									  <th>Username</th>
+									  <th>Date registered</th>
+									  <th>Role</th>
+									  <th>Status</th>                                          
+								  </tr>
+							  </thead>   
+							  <tbody>
+								<tr>
+									<td>Muhammad Usman</td>
+									<td class="center">2012/01/01</td>
+									<td class="center">Member</td>
+									<td class="center">
+										<span class="label label-success">Active</span>
+									</td>                                       
+								</tr>
+								<tr>
+									<td>White Horse</td>
+									<td class="center">2012/02/01</td>
+									<td class="center">Staff</td>
+									<td class="center">
+										<span class="label label-important">Banned</span>
+									</td>                                       
+								</tr>
+								<tr>
+									<td>Sheikh Heera</td>
+									<td class="center">2012/02/01</td>
+									<td class="center">Admin</td>
+									<td class="center">
+										<span class="label">Inactive</span>
+									</td>                                        
+								</tr>
+								<tr>
+									<td>Saruar</td>
+									<td class="center">2012/03/01</td>
+									<td class="center">Member</td>
+									<td class="center">
+										<span class="label label-warning">Pending</span>
+									</td>                                       
+								</tr>
+								<tr>
+									<td>Sana Amrin</td>
+									<td class="center">2012/01/21</td>
+									<td class="center">Staff</td>
+									<td class="center">
+										<span class="label label-success">Active</span>
+									</td>                                        
+								</tr>                                   
+							  </tbody>
+						 </table>  
+						 <div class="pagination pagination-centered">
+						  <ul>
+							<li><a href="#">Prev</a></li>
+							<li class="active">
+							  <a href="#">1</a>
+							</li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">Next</a></li>
+						  </ul>
+						</div>     
 					</div>
 				</div>
-			</div>
-					
-			<div class="row-fluid sortable">
-				<div class="box span4">
-					<div class="box-header well">
-						<h2><i class="icon-th"></i> Tabs</h2>
-						<div class="box-icon">
-							<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
-							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
-							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
-						</div>
-					</div>
-					<div class="box-content">
-						<ul class="nav nav-tabs" id="myTab">
-							<li class="active"><a href="#info">Info</a></li>
-							<li><a href="#custom">Custom</a></li>
-							<li><a href="#messages">Messages</a></li>
-						</ul>
-						 
-						<div id="myTabContent" class="tab-content">
-							<div class="tab-pane active" id="info">
-								<h3>Charisma <small>a fully featued template</small></h3>
-								<p>Its a fully featured, responsive template for your admin panel. Its optimized for tablet and mobile phones. Scan the QR code below to view it in your mobile device.</p> <img alt="QR Code" class="charisma_qr center" src="img/qrcode136.png" />
-							</div>
-							<div class="tab-pane" id="custom">
-								<h3>Custom <small>small text</small></h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales at. Nulla tellus elit, varius non commodo eget, mattis vel eros. In sed ornare nulla. Donec consectetur, velit a pharetra ultricies, diam lorem lacinia risus, ac commodo orci erat eu massa. Sed sit amet nulla ipsum. Donec felis mauris, vulputate sed tempor at, aliquam a ligula. Pellentesque non pulvinar nisi.</p>
-							</div>
-							<div class="tab-pane" id="messages">
-								<h3>Messages <small>small text</small></h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales at. Nulla tellus elit, varius non commodo eget, mattis vel eros. In sed ornare nulla. Donec consectetur, velit a pharetra ultricies, diam lorem lacinia risus, ac commodo orci erat eu massa. Sed sit amet nulla ipsum. Donec felis mauris, vulputate sed tempor at, aliquam a ligula. Pellentesque non pulvinar nisi.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor.</p>
-							</div>
-						</div>
-					</div>
-				</div><!--/span-->
 						
 				<div class="box span4">
 					<div class="box-header well" data-original-title>
-						<h2><i class="icon-user"></i> Member Activity</h2>
+						<h2><i class="icon-th"></i> Groups</h2>
 						<div class="box-icon">
+						  <!--
 							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
 							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+						-->
 						</div>
 					</div>
 					<div class="box-content">
-						<div class="box-content">
-							<ul class="dashboard-list">
-								<li>
-									<a href="#">
-										<img class="dashboard-avatar" alt="Usman" src="http://www.gravatar.com/avatar/f0ea51fa1e4fae92608d8affee12f67b.png?s=50"></a>
-										<strong>Name:</strong> <a href="#">Usman
-									</a><br>
-									<strong>Since:</strong> 17/05/2012<br>
-									<strong>Status:</strong> <span class="label label-success">Approved</span>                                  
-								</li>
-								<li>
-									<a href="#">
-										<img class="dashboard-avatar" alt="Sheikh Heera" src="http://www.gravatar.com/avatar/3232415a0380253cfffe19163d04acab.png?s=50"></a>
-										<strong>Name:</strong> <a href="#">Sheikh Heera
-									</a><br>
-									<strong>Since:</strong> 17/05/2012<br>
-									<strong>Status:</strong> <span class="label label-warning">Pending</span>                                 
-								</li>
-								<li>
-									<a href="#">
-										<img class="dashboard-avatar" alt="Abdullah" src="http://www.gravatar.com/avatar/46056f772bde7c536e2086004e300a04.png?s=50"></a>
-										<strong>Name:</strong> <a href="#">Abdullah
-									</a><br>
-									<strong>Since:</strong> 25/05/2012<br>
-									<strong>Status:</strong> <span class="label label-important">Banned</span>                                  
-								</li>
-								<li>
-									<a href="#">
-										<img class="dashboard-avatar" alt="Saruar Ahmed" src="http://www.gravatar.com/avatar/564e1bb274c074dc4f6823af229d9dbb.png?s=50"></a>
-										<strong>Name:</strong> <a href="#">Saruar Ahmed
-									</a><br>
-									<strong>Since:</strong> 17/05/2012<br>
-									<strong>Status:</strong> <span class="label label-info">Updates</span>                                  
-								</li>
-							</ul>
-						</div>
+						<table class="table">
+							  <thead>
+								  <tr>
+									  <th>Username</th>
+									  <th>Date registered</th>
+									  <th>Role</th>
+									  <th>Status</th>                                          
+								  </tr>
+							  </thead>   
+							  <tbody>
+								<tr>
+									<td>Muhammad Usman</td>
+									<td class="center">2012/01/01</td>
+									<td class="center">Member</td>
+									<td class="center">
+										<span class="label label-success">Active</span>
+									</td>                                       
+								</tr>
+								<tr>
+									<td>White Horse</td>
+									<td class="center">2012/02/01</td>
+									<td class="center">Staff</td>
+									<td class="center">
+										<span class="label label-important">Banned</span>
+									</td>                                       
+								</tr>
+								<tr>
+									<td>Sheikh Heera</td>
+									<td class="center">2012/02/01</td>
+									<td class="center">Admin</td>
+									<td class="center">
+										<span class="label">Inactive</span>
+									</td>                                        
+								</tr>
+								<tr>
+									<td>Saruar</td>
+									<td class="center">2012/03/01</td>
+									<td class="center">Member</td>
+									<td class="center">
+										<span class="label label-warning">Pending</span>
+									</td>                                       
+								</tr>
+								<tr>
+									<td>Sana Amrin</td>
+									<td class="center">2012/01/21</td>
+									<td class="center">Staff</td>
+									<td class="center">
+										<span class="label label-success">Active</span>
+									</td>                                        
+								</tr>                                   
+							  </tbody>
+						 </table>  
+						 <div class="pagination pagination-centered">
+						  <ul>
+							<li><a href="#">Prev</a></li>
+							<li class="active">
+							  <a href="#">1</a>
+							</li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">Next</a></li>
+						  </ul>
+						</div>     
 					</div>
-				</div><!--/span-->
-						
+				</div>
+				
 				<div class="box span4">
 					<div class="box-header well" data-original-title>
-						<h2><i class="icon-list-alt"></i> Realtime Traffic</h2>
+						<h2><i class="icon-th"></i> Post-Process</h2>
 						<div class="box-icon">
+						  <!--
 							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
 							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+						-->
 						</div>
 					</div>
 					<div class="box-content">
-						<div id="realtimechart" style="height:190px;"></div>
-							<p class="clearfix">You can update a chart periodically to get a real-time effect by using a timer to insert the new data in the plot and redraw it.</p>
-							<p>Time between updates: <input id="updateInterval" type="text" value="" style="text-align: right; width:5em"> milliseconds</p>
+						<table class="table">
+							  <thead>
+								  <tr>
+									  <th>Username</th>
+									  <th>Date registered</th>
+									  <th>Role</th>
+									  <th>Status</th>                                          
+								  </tr>
+							  </thead>   
+							  <tbody>
+								<tr>
+									<td>Muhammad Usman</td>
+									<td class="center">2012/01/01</td>
+									<td class="center">Member</td>
+									<td class="center">
+										<span class="label label-success">Active</span>
+									</td>                                       
+								</tr>
+								<tr>
+									<td>White Horse</td>
+									<td class="center">2012/02/01</td>
+									<td class="center">Staff</td>
+									<td class="center">
+										<span class="label label-important">Banned</span>
+									</td>                                       
+								</tr>
+								<tr>
+									<td>Sheikh Heera</td>
+									<td class="center">2012/02/01</td>
+									<td class="center">Admin</td>
+									<td class="center">
+										<span class="label">Inactive</span>
+									</td>                                        
+								</tr>
+								<tr>
+									<td>Saruar</td>
+									<td class="center">2012/03/01</td>
+									<td class="center">Member</td>
+									<td class="center">
+										<span class="label label-warning">Pending</span>
+									</td>                                       
+								</tr>
+								<tr>
+									<td>Sana Amrin</td>
+									<td class="center">2012/01/21</td>
+									<td class="center">Staff</td>
+									<td class="center">
+										<span class="label label-success">Active</span>
+									</td>                                        
+								</tr>                                   
+							  </tbody>
+						 </table>  
+						 <div class="pagination pagination-centered">
+						  <ul>
+							<li><a href="#">Prev</a></li>
+							<li class="active">
+							  <a href="#">1</a>
+							</li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">Next</a></li>
+						  </ul>
+						</div>     
 					</div>
-				</div><!--/span-->
+				</div>
+				
 			</div><!--/row-->
 
 			<div class="row-fluid sortable">
@@ -421,8 +540,8 @@
 		</div>
 
 		<footer>
-			<p class="pull-left">&copy; <a href="http://usman.it" target="_blank">Muhammad Usman</a> 2012</p>
-			<p class="pull-right">Powered by: <a href="http://usman.it/free-responsive-admin-template">Charisma</a></p>
+			<p class="pull-left">&copy; <a href="http://aceshome.com" target="_blank">Eric Young</a> 2013</p>
+			<p class="pull-right">Powered by: NewzDash</p>
 		</footer>
 		
 	</div><!--/.fluid-container-->
