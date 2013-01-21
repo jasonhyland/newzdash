@@ -96,7 +96,7 @@ $dashdata = new DashData;
 			<!-- Dashboard summaries start -->
 			<div class="row-fluid">
 				<a data-rel="tooltip" title="6 new members." class="well span4 top-block" href="#">
-					<span class="icon32 icon-red icon-user"></span>
+					<span class="icon32 icon-color icon-star-on"></span>
 					<div>Total Releases</div>
 					<div><?php echo $dashdata->getReleaseCount(); ?></div>
 					<!--
@@ -105,7 +105,7 @@ $dashdata = new DashData;
 				</a>
 
 				<a data-rel="tooltip" title="new pro members." class="well span4 top-block" href="#">
-					<span class="icon32 icon-color icon-star-on"></span>
+					<span class="icon32 icon-color icon-comment"></span>
 					<div>Active Groups</div>
 					<div><?php echo $dashdata->getActiveGroupCount(); ?></div>
 					<!--
@@ -114,7 +114,7 @@ $dashdata = new DashData;
 				</a>
 
 				<a data-rel="tooltip" title="$34 new sales." class="well span4 top-block" href="#">
-					<span class="icon32 icon-color icon-cart"></span>
+					<span class="icon32 icon-color icon-archive"></span>
 					<div>Pending Processing</div>
 					<div><?php echo $dashdata->getPendingProcessingCount(); ?></div>
 					<!--
