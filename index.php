@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<?php include('config.php'); ?>
+<?php
+require_once('config.php');
+require_once("lib/dashdata.php");
+
+$dashdata = new DashData;
+
+?>
 
 <html lang="en">
 <head>
@@ -92,31 +98,29 @@
 				<a data-rel="tooltip" title="6 new members." class="well span4 top-block" href="#">
 					<span class="icon32 icon-red icon-user"></span>
 					<div>Total Releases</div>
-					<div>123456</div>
+					<div><?php echo $dashdata->getReleaseCount(); ?></div>
+					<!--
 					<span class="notification">6</span>
+					-->
 				</a>
 
 				<a data-rel="tooltip" title="new pro members." class="well span4 top-block" href="#">
 					<span class="icon32 icon-color icon-star-on"></span>
-					<div>Total Groups</div>
-					<div>28</div>
+					<div>Active Groups</div>
+					<div><?php echo $dashdata->getActiveGroupCount(); ?></div>
+					<!--
 					<span class="notification green">new</span>
+					-->
 				</a>
 
 				<a data-rel="tooltip" title="$34 new sales." class="well span4 top-block" href="#">
 					<span class="icon32 icon-color icon-cart"></span>
 					<div>Pending Processing</div>
-					<div>320</div>
+					<div><?php echo $dashdata->getPendingProcessingCount(); ?></div>
+					<!--
 					<span class="notification yellow">34</span>
+					-->
 				</a>
-				<!--
-				<a data-rel="tooltip" title="12 new messages." class="well span3 top-block" href="#">
-					<span class="icon32 icon-color icon-envelope-closed"></span>
-					<div>foobar</div>
-					<div>25</div>
-					<span class="notification red">12</span>
-				</a>
-				-->
 			</div>
 			<!-- Dashboard summaries end -->			
 			
@@ -133,58 +137,8 @@
 						</div>
 					</div>
 					<div class="box-content">
-						<table class="table">
-							  <thead>
-								  <tr>
-									  <th>Username</th>
-									  <th>Date registered</th>
-									  <th>Role</th>
-									  <th>Status</th>                                          
-								  </tr>
-							  </thead>   
-							  <tbody>
-								<tr>
-									<td>Muhammad Usman</td>
-									<td class="center">2012/01/01</td>
-									<td class="center">Member</td>
-									<td class="center">
-										<span class="label label-success">Active</span>
-									</td>                                       
-								</tr>
-								<tr>
-									<td>White Horse</td>
-									<td class="center">2012/02/01</td>
-									<td class="center">Staff</td>
-									<td class="center">
-										<span class="label label-important">Banned</span>
-									</td>                                       
-								</tr>
-								<tr>
-									<td>Sheikh Heera</td>
-									<td class="center">2012/02/01</td>
-									<td class="center">Admin</td>
-									<td class="center">
-										<span class="label">Inactive</span>
-									</td>                                        
-								</tr>
-								<tr>
-									<td>Saruar</td>
-									<td class="center">2012/03/01</td>
-									<td class="center">Member</td>
-									<td class="center">
-										<span class="label label-warning">Pending</span>
-									</td>                                       
-								</tr>
-								<tr>
-									<td>Sana Amrin</td>
-									<td class="center">2012/01/21</td>
-									<td class="center">Staff</td>
-									<td class="center">
-										<span class="label label-success">Active</span>
-									</td>                                        
-								</tr>                                   
-							  </tbody>
-						 </table>  
+					  <?php $dashdata->buildReleaseTable(); ?>
+
 						 <div class="pagination pagination-centered">
 						  <ul>
 							<li><a href="#">Prev</a></li>
@@ -211,58 +165,7 @@
 						</div>
 					</div>
 					<div class="box-content">
-						<table class="table">
-							  <thead>
-								  <tr>
-									  <th>Username</th>
-									  <th>Date registered</th>
-									  <th>Role</th>
-									  <th>Status</th>                                          
-								  </tr>
-							  </thead>   
-							  <tbody>
-								<tr>
-									<td>Muhammad Usman</td>
-									<td class="center">2012/01/01</td>
-									<td class="center">Member</td>
-									<td class="center">
-										<span class="label label-success">Active</span>
-									</td>                                       
-								</tr>
-								<tr>
-									<td>White Horse</td>
-									<td class="center">2012/02/01</td>
-									<td class="center">Staff</td>
-									<td class="center">
-										<span class="label label-important">Banned</span>
-									</td>                                       
-								</tr>
-								<tr>
-									<td>Sheikh Heera</td>
-									<td class="center">2012/02/01</td>
-									<td class="center">Admin</td>
-									<td class="center">
-										<span class="label">Inactive</span>
-									</td>                                        
-								</tr>
-								<tr>
-									<td>Saruar</td>
-									<td class="center">2012/03/01</td>
-									<td class="center">Member</td>
-									<td class="center">
-										<span class="label label-warning">Pending</span>
-									</td>                                       
-								</tr>
-								<tr>
-									<td>Sana Amrin</td>
-									<td class="center">2012/01/21</td>
-									<td class="center">Staff</td>
-									<td class="center">
-										<span class="label label-success">Active</span>
-									</td>                                        
-								</tr>                                   
-							  </tbody>
-						 </table>  
+					  <?php $dashdata->buildGroupTable(); ?>
 						 <div class="pagination pagination-centered">
 						  <ul>
 							<li><a href="#">Prev</a></li>
@@ -289,70 +192,7 @@
 						</div>
 					</div>
 					<div class="box-content">
-						<table class="table">
-							  <thead>
-								  <tr>
-									  <th>Username</th>
-									  <th>Date registered</th>
-									  <th>Role</th>
-									  <th>Status</th>                                          
-								  </tr>
-							  </thead>   
-							  <tbody>
-								<tr>
-									<td>Muhammad Usman</td>
-									<td class="center">2012/01/01</td>
-									<td class="center">Member</td>
-									<td class="center">
-										<span class="label label-success">Active</span>
-									</td>                                       
-								</tr>
-								<tr>
-									<td>White Horse</td>
-									<td class="center">2012/02/01</td>
-									<td class="center">Staff</td>
-									<td class="center">
-										<span class="label label-important">Banned</span>
-									</td>                                       
-								</tr>
-								<tr>
-									<td>Sheikh Heera</td>
-									<td class="center">2012/02/01</td>
-									<td class="center">Admin</td>
-									<td class="center">
-										<span class="label">Inactive</span>
-									</td>                                        
-								</tr>
-								<tr>
-									<td>Saruar</td>
-									<td class="center">2012/03/01</td>
-									<td class="center">Member</td>
-									<td class="center">
-										<span class="label label-warning">Pending</span>
-									</td>                                       
-								</tr>
-								<tr>
-									<td>Sana Amrin</td>
-									<td class="center">2012/01/21</td>
-									<td class="center">Staff</td>
-									<td class="center">
-										<span class="label label-success">Active</span>
-									</td>                                        
-								</tr>                                   
-							  </tbody>
-						 </table>  
-						 <div class="pagination pagination-centered">
-						  <ul>
-							<li><a href="#">Prev</a></li>
-							<li class="active">
-							  <a href="#">1</a>
-							</li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">Next</a></li>
-						  </ul>
-						</div>     
+					  <?php $dashdata->buildPendingTable(); ?>  
 					</div>
 				</div>
 				
