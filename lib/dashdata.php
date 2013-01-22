@@ -11,36 +11,119 @@ class DashData
 {
     
 	/**
+	 * getLastGroupUpdate
+	 */
+	public function getLastGroupUpdate()
+	{
+	    $sql=sprintf("select name,last_updated from groups order by last_updated desc limit 0,5");
+	    $db = new DB;
+	    $data = $db->queryOneRow($sql);
+	
+	    $last = "unknown";
+	    
+	    printf('<span class="icon32 icon-color icon-clock"></span>
+			<div>Last Group Update</div>
+			<div>%s</div>', $data['last_updated']);
+	}
+    
+	/**
+	 * getLastBinaryAdded
+	 */
+	public function getLastBinaryAdded()
+	{
+	    $sql=sprintf("select relname,dateadded from binaries order by dateadded desc limit 0,5");
+	    $db = new DB;
+	    $data = $db->queryOneRow($sql);
+	
+	    
+	    printf('<span class="icon32 icon-color icon-clock"></span>
+			<div>Last Binary Added</div>
+			<div>%s</div>', $data['dateadded']);
+	}	
+    
+	/**
+	 * getLastReleaseCreated
+	 */
+	public function getLastReleaseCreated()
+	{
+	    $sql=sprintf("select name,adddate from releases order by adddate desc limit 0,5");
+	    $db = new DB;
+	    $data = $db->queryOneRow($sql);
+	  
+	    printf('<span class="icon32 icon-color icon-clock"></span>
+			<div>Last Release Created</div>
+			<div>%s</div>', $data['adddate']);
+	}    
+    				
+   
+    
+	/**
+	 * getRegexInfo
+	 */
+	public function getRegexInfo()
+	{
+	    $sql=sprintf("select * from site where `setting`='latestregexrevision'");
+	    $db = new DB;
+	    $data = $db->queryOneRow($sql);
+	
+	    printf('<span class="icon32 icon-color icon-inbox"></span>
+			<div>Regex Version</div>
+			<div>%s</div>', $data['value']);
+	}
+	
+    	/**
+	 * getDatabaseInfo
+	 */
+	public function getDatabaseInfo()
+	{
+	    $sql=sprintf("select * from site where `setting`='dbversion'");
+	    $db = new DB;
+	    $data = $db->queryOneRow($sql);
+	    # $version = $data['value'];
+	    # now, we want just the numbers as the version is stored as '#Rev: number $'
+	    preg_match('/[0-9]+/', $data['value'], $version);
+
+	    printf('<span class="icon32 icon-color icon-inbox"></span>
+			<div>Database Version</div>
+			<div>%s</div>', $version[0]);
+	}
+    
+	/**
 	 * getSubversionInfo
 	 */
 	public function getSubversionInfo()
 	{
 	    svn_auth_set_parameter( SVN_AUTH_PARAM_DEFAULT_USERNAME, SVN_USERNAME );
 	    svn_auth_set_parameter( SVN_AUTH_PARAM_DEFAULT_PASSWORD, SVN_PASSWORD );
-	    $svn_stat=svn_status(realpath("/home/nzb/nnplus"), SVN_NON_RECURSIVE|SVN_ALL);
+	    $svn_stat=svn_status(realpath(NEWZNAB_HOME), SVN_NON_RECURSIVE|SVN_ALL);
+	    $current_version=sprintf("%s", $svn_stat[0]["revision"]);
 	    
-	    $version=sprintf("%s", $svn_stat[0]["revision"]);
+    
+	    $svn_info=svn_info(realpath(NEWZNAB_HOME), SVN_SHOW_UPDATES|SVN_NON_RECURSIVE);
+	    $latest_version=sprintf("%s", $svn_info[0]["last_changed_rev"]);
 
-	    return $version;
-	
-
+	      	
+	    if ($current_version === $latest_version)
+	    {
+		$version_string=sprintf("Running latest version (%s)", $current_version);
+		$notification_string="";
+	    }
+	    else
+	    {
+		$version_string=sprintf("Running %s, Latest available is %s", $current_version, $latest_version);
+		$updates_available=intval($latest_version)-intval($current_version);
+		$notification_string=sprintf('<span class="notification red">%d</span>', $updates_available);
+	    }
+	    
+	    printf('<span class="icon32 icon-color icon-archive"></span>
+			<div>SVN Revision</div>
+			<div>%s</div>
+			%s', $version_string, $notification_string);
+				
+				
 	}
 	
-	/**
-	 * getLatestSubversionInfo
-	 */
-	public function getLatestSubversionInfo()
-	{
-	    svn_auth_set_parameter( SVN_AUTH_PARAM_DEFAULT_USERNAME, SVN_USERNAME );
-	    svn_auth_set_parameter( SVN_AUTH_PARAM_DEFAULT_PASSWORD, SVN_PASSWORD );
 
-	    $svn_info=svn_info(realpath("/home/nzb/newznab/www"), SVN_SHOW_UPDATES|SVN_NON_RECURSIVE);
-	    $version=sprintf("%s", $svn_info[0]["last_changed_rev"]);
-	    return $version;
-	}
-		
-	
-	
         /**
          * count of releases
          */
@@ -48,14 +131,20 @@ class DashData
         {                       
             $r=new Releases;
             $total_releases = $r->getCount();
-            return $total_releases;
+	
+	    printf('<span class="icon32 icon-color icon-star-on"></span>
+			<div>Total Releases</div>
+			<div>%s</div>', $total_releases);    
         }
         
         public function getActiveGroupCount()
         {
             $g = new Groups;
             $active_groups = $g->getCount("", true);
-            return $active_groups;
+ 				
+	    printf('<span class="icon32 icon-color icon-comment"></span>
+			<div>Active Groups</div>
+			<div>%s</div>', $active_groups);   					
         }
         
         public function getPendingProcessingCount()
@@ -78,7 +167,12 @@ class DashData
             
             $data = $db->query($sql_query);
 	    $total = $data[0]['ToDo'];
-            return $total;
+
+	    printf('<span class="icon32 icon-color icon-star-on"></span>
+			<div>Pending Processing</div>
+			<div>%s</div>', $total);   	
+    
+    
         }
         
         public function buildReleaseTable()
