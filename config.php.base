@@ -1,0 +1,13 @@
+<?php
+
+//=========================
+// Config you must change - updated by installer.
+//=========================
+
+require('/home/nzb/newznab/www/config.php');
+
+define('SVN_USERNAME', 'username');
+define('SVN_PASSWORD', 'password');
+
+?>
+
