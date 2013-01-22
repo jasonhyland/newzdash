@@ -93,11 +93,22 @@ class DashData
 	 */
 	public function getSubversionLatestFromRss()
 	{
-	
-	    $xml_source = file_get_contents('http://newznab.com/plussvnrss.xml');
 
+	    # cache the rss feed so we don't hammer the server
+	    # and a slight delay in knowing a new release is available is not that bad
+	    if (xcache_isset("newznabrss"))
+	    {
+		$xml_source = xcache_get("newznabrss");
+	    }
+	    else
+	    {
+		$xml_source = file_get_contents('http://newznab.com/plussvnrss.xml');
+		# store it for 15 minutes
+		xcache_set("newznabrss", $xml_source, 60*15);
+	    }
+	    
 	    $x = simplexml_load_string($xml_source);
-
+	    
 	    if(count($x) == 0)
 		return "";
 
@@ -105,6 +116,7 @@ class DashData
 	    preg_match('/[0-9]+/', $rev, $latest);
 
 	    return $latest[0];
+
 	}
 	
 	/**
