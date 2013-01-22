@@ -93,6 +93,7 @@ class DashData
 	 */
 	public function getSubversionInfo()
 	{
+
 	    svn_auth_set_parameter( SVN_AUTH_PARAM_DEFAULT_USERNAME, SVN_USERNAME );
 	    svn_auth_set_parameter( SVN_AUTH_PARAM_DEFAULT_PASSWORD, SVN_PASSWORD );
 	    $svn_stat=svn_status(realpath(NEWZNAB_HOME), SVN_NON_RECURSIVE|SVN_ALL);
@@ -119,7 +120,6 @@ class DashData
 			<div>SVN Revision</div>
 			<div>%s</div>
 			%s', $version_string, $notification_string);
-				
 				
 	}
 	

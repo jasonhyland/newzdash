@@ -169,10 +169,7 @@ $dashdata = new DashData;
 			</div>
 		</div>
 
-		<footer>
-			<p class="pull-left">&copy; <a href="http://aceshome.com" target="_blank">xxxx xxxxx</a> 2013</p>
-			<p class="pull-right">Powered by: Unnamed</p>
-		</footer>
+	  <?php include 'includes/bottombar.php'; ?>
 		
 	</div><!--/.fluid-container-->
 
