@@ -95,7 +95,7 @@ $dashdata = new DashData;
 			
 			<!-- Dashboard summaries start -->
 			<div class="row-fluid">
-				<a data-rel="tooltip" title="6 new members." class="well span4 top-block" href="#">
+				<a data-rel="tooltip" title="6 new members." class="well span3 top-block" href="#">
 					<span class="icon32 icon-color icon-star-on"></span>
 					<div>Total Releases</div>
 					<div><?php echo $dashdata->getReleaseCount(); ?></div>
@@ -104,7 +104,7 @@ $dashdata = new DashData;
 					-->
 				</a>
 
-				<a data-rel="tooltip" title="new pro members." class="well span4 top-block" href="#">
+				<a data-rel="tooltip" title="new pro members." class="well span3 top-block" href="#">
 					<span class="icon32 icon-color icon-comment"></span>
 					<div>Active Groups</div>
 					<div><?php echo $dashdata->getActiveGroupCount(); ?></div>
@@ -113,17 +113,54 @@ $dashdata = new DashData;
 					-->
 				</a>
 
-				<a data-rel="tooltip" title="$34 new sales." class="well span4 top-block" href="#">
+				<a data-rel="tooltip" title="pending" class="well span3 top-block" href="#">
+					<span class="icon32 icon-color icon-star-on"></span>
+					<div>Pending Processing</div>
+					<div><?php echo $dashdata->getPendingProcessingCount(); ?></div>
+					<!--
+					<span class="notification">6</span>
+					-->
+				</a>
+
+				<a data-rel="tooltip" title="$34 new sales." class="well span3 top-block" href="#">
 					<span class="icon32 icon-color icon-archive"></span>
 					<div>Running SVN Revision: <?php echo $dashdata->getSubversionInfo(); ?></div>
 					<div>Latest SVN Revision: <?php echo $dashdata->getLatestSubversionInfo(); ?></div>
 					<!--
 					<span class="notification yellow">34</span>
 					-->
+				</a>				
+			</div>
+			<!-- Dashboard summaries end -->
+			
+			<div class="row-fluid">
+				<a data-rel="tooltip" title="pending" class="well span4 top-block" href="#">
+					<span class="icon32 icon-color icon-comment"></span>
+					<div></div>
+					<div></div>
+					<!--
+					<span class="notification">6</span>
+					-->
+				</a>
+
+				<a data-rel="tooltip" title="new pro members." class="well span4 top-block" href="#">
+					<span class="icon32 icon-color icon-comment"></span>
+					<div></div>
+					<div></div>
+					<!--
+					<span class="notification green">new</span>
+					-->
+				</a>
+
+				<a data-rel="tooltip" title="$34 new sales." class="well span4 top-block" href="#">
+					<span class="icon32 icon-color icon-comment"></span>
+					<div></div>
+					<div></div>
+					<!--
+					<span class="notification yellow">34</span>
+					-->
 				</a>
 			</div>
-			<!-- Dashboard summaries end -->			
-			
 					
 
 			<div class="row-fluid sortable">
