@@ -8,7 +8,7 @@
 			<li><a class="ajax-link" href="statistics.php"><i class="icon-eye-open"></i><span class="hidden-tablet"> Statistics</span></a></li>
 			<li><a class="ajax-link" href="performance.php"><i class="icon-list-alt"></i><span class="hidden-tablet"> Performance</span></a></li>
 			<li><a class="ajax-link" href="system.php"><i class="icon-list-alt"></i><span class="hidden-tablet"> System</span></a></li>
-
+			<li><a class="ajax-link" href="configure.php"><i class="icon-list-alt"></i><span class="hidden-tablet"> Configure</span></a></li>
 		</ul>
 	</div><!--/.well -->
 </div><!--/span-->
