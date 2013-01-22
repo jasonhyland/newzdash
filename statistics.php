@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <?php
 require_once('config.php');
-require_once("lib/dashdata.php");
+require_once("lib/stats.php");
 
-$dashdata = new DashData;
+$stats = new Stats;
 
 ?>
 
@@ -107,7 +107,7 @@ $dashdata = new DashData;
 						</div>
 					</div>
 					<div class="box-content">
-					  <?php $dashdata->buildReleaseTable(); ?>
+					  <?php $stats->buildReleaseTable(); ?>
 
 						 <div class="pagination pagination-centered">
 						  <ul>
@@ -135,7 +135,7 @@ $dashdata = new DashData;
 						</div>
 					</div>
 					<div class="box-content">
-					  <?php $dashdata->buildGroupTable(); ?>
+					  <?php $stats->buildGroupTable(); ?>
 						 <div class="pagination pagination-centered">
 						  <ul>
 							<li><a href="#">Prev</a></li>
@@ -162,7 +162,7 @@ $dashdata = new DashData;
 						</div>
 					</div>
 					<div class="box-content">
-					  <?php $dashdata->buildPendingTable(); ?>  
+					  <?php $stats->buildPendingTable(); ?>  
 					</div>
 				</div>
 				

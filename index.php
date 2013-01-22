@@ -170,8 +170,8 @@ $dashdata = new DashData;
 		</div>
 
 		<footer>
-			<p class="pull-left">&copy; <a href="http://aceshome.com" target="_blank">Eric Young</a> 2013</p>
-			<p class="pull-right">Powered by: NewzDash</p>
+			<p class="pull-left">&copy; <a href="http://aceshome.com" target="_blank">xxxx xxxxx</a> 2013</p>
+			<p class="pull-right">Powered by: Unnamed</p>
 		</footer>
 		
 	</div><!--/.fluid-container-->
