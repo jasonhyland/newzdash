@@ -91,17 +91,37 @@ class DashData
 	/**
 	 * getSubversionInfo
 	 */
+	public function getSubversionLatestFromRss()
+	{
+	
+	    $xml_source = file_get_contents('http://newznab.com/plussvnrss.xml');
+
+	    $x = simplexml_load_string($xml_source);
+
+	    if(count($x) == 0)
+		return "";
+
+	    $rev=$x->channel->item[0]->title;
+	    preg_match('/[0-9]+/', $rev, $latest);
+
+	    return $latest[0];
+	}
+	
+	/**
+	 * getSubversionInfo
+	 */
 	public function getSubversionInfo()
 	{
 
-	    svn_auth_set_parameter( SVN_AUTH_PARAM_DEFAULT_USERNAME, SVN_USERNAME );
-	    svn_auth_set_parameter( SVN_AUTH_PARAM_DEFAULT_PASSWORD, SVN_PASSWORD );
+	    #svn_auth_set_parameter( SVN_AUTH_PARAM_DEFAULT_USERNAME, SVN_USERNAME );
+	    #svn_auth_set_parameter( SVN_AUTH_PARAM_DEFAULT_PASSWORD, SVN_PASSWORD );
 	    $svn_stat=svn_status(realpath(NEWZNAB_HOME), SVN_NON_RECURSIVE|SVN_ALL);
 	    $current_version=sprintf("%s", $svn_stat[0]["revision"]);
 	    
     
-	    $svn_info=svn_info(realpath(NEWZNAB_HOME), SVN_SHOW_UPDATES|SVN_NON_RECURSIVE);
-	    $latest_version=sprintf("%s", $svn_info[0]["last_changed_rev"]);
+	    #$svn_info=svn_info(realpath(NEWZNAB_HOME), SVN_SHOW_UPDATES);
+	    #$latest_version=sprintf("%s", $svn_info[0]["last_changed_rev"]);
+	    $latest_version=DashData::getSubversionLatestFromRss();
 
 	      	
 	    if ($current_version === $latest_version)

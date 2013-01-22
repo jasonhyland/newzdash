@@ -24,7 +24,7 @@ class RecentReleases
 							  <tbody>';
                                                           
 							  
-		# we are dealing with categories where the parent ID is 'CAT_PARENT_MOVIE'					
+				
 		$category=new Category;
 		# get all the child categories
 		$allcategories=$category->getChildren($newznab_cat);
