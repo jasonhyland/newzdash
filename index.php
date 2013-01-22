@@ -115,8 +115,8 @@ $dashdata = new DashData;
 
 				<a data-rel="tooltip" title="$34 new sales." class="well span4 top-block" href="#">
 					<span class="icon32 icon-color icon-archive"></span>
-					<div>Pending Processing</div>
-					<div><?php echo $dashdata->getPendingProcessingCount(); ?></div>
+					<div>Running SVN Revision: <?php echo $dashdata->getSubversionInfo(); ?></div>
+					<div>Latest SVN Revision: <?php echo $dashdata->getLatestSubversionInfo(); ?></div>
 					<!--
 					<span class="notification yellow">34</span>
 					-->

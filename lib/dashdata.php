@@ -8,7 +8,39 @@ require_once(WWW_DIR."/lib/site.php");
 
 
 class DashData
-{       
+{
+    
+	/**
+	 * getSubversionInfo
+	 */
+	public function getSubversionInfo()
+	{
+	    svn_auth_set_parameter( SVN_AUTH_PARAM_DEFAULT_USERNAME, SVN_USERNAME );
+	    svn_auth_set_parameter( SVN_AUTH_PARAM_DEFAULT_PASSWORD, SVN_PASSWORD );
+	    $svn_stat=svn_status(realpath("/home/nzb/nnplus"), SVN_NON_RECURSIVE|SVN_ALL);
+	    
+	    $version=sprintf("%s", $svn_stat[0]["revision"]);
+
+	    return $version;
+	
+
+	}
+	
+	/**
+	 * getLatestSubversionInfo
+	 */
+	public function getLatestSubversionInfo()
+	{
+	    svn_auth_set_parameter( SVN_AUTH_PARAM_DEFAULT_USERNAME, SVN_USERNAME );
+	    svn_auth_set_parameter( SVN_AUTH_PARAM_DEFAULT_PASSWORD, SVN_PASSWORD );
+
+	    $svn_info=svn_info(realpath("/home/nzb/newznab/www"), SVN_SHOW_UPDATES|SVN_NON_RECURSIVE);
+	    $version=sprintf("%s", $svn_info[0]["last_changed_rev"]);
+	    return $version;
+	}
+		
+	
+	
         /**
          * count of releases
          */
