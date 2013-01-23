@@ -11,11 +11,11 @@ NewzDash is a Dashboard application built for the newznab indexing software (new
 
 Installation Instructions
 
-1) clone the git repository: 'git clone git@github.com:tssgery/newzdash.git'
-2) withing newzdash directory, copy config.php.base file to config.php
-3) Edit config.php, setting the directory name of newznab installation and URL to access newznab
-4) Configure apache or nginx to server newzdash at port of your choosing (I prefer 8080)
-5) Access NewzDash via your browser at http://hostname:port
+- clone the git repository: 'git clone git@github.com:tssgery/newzdash.git'
+- withing newzdash directory, copy config.php.base file to config.php
+- Edit config.php, setting the directory name of newznab installation and URL to access newznab
+- Configure apache or nginx to server newzdash at port of your choosing (I prefer 8080)
+- Access NewzDash via your browser at http://hostname:port
 
 
 ToDo
