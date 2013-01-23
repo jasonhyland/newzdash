@@ -2,16 +2,24 @@ Newzdash
 ========
 
 NewzNab dashboard, based upon free Charisma bootstrap theme
+	
+    Based off original work titled 'Charisma' by Muhammad Usman
+    Original Charisma license in doc/charisma-license.txt
 
 
-####
-# ORIGINAL CHARISMA information follows
-####
+NewzDash is a Dashboard application built for the newznab indexing software (newznab.com)
 
-#### free, premium quality, responsive, multiple skin admin template.
+Installation Instructions
 
-I have created Charisma to ease the repeat work I have to do on my projects. Now I re-use Charisma as a base for my admin panel work and I am sharing it with you :)
+1) clone the git repository: 'git clone git@github.com:tssgery/newzdash.git'
+2) withing newzdash directory, copy config.php.base file to config.php
+3) Edit config.php, setting the directory name of newznab installation and URL to access newznab
+4) Configure apache or nginx to server newzdash at port of your choosing (I prefer 8080)
+5) Access NewzDash via your browser at http://hostname:port
 
-[See Live Demo](http://usman.it/themes/charisma/ "")
 
-Please visit [http://usman.it/free-responsive-admin-template](http://usman.it/free-responsive-admin-template "") for more information.
+ToDo
+- Add authentication to NewzDash, using users stored within newznab
+- Add system information (such as memory and cpu consumption, and disk space)
+- Enable newzdash version checking and automatic updates
+

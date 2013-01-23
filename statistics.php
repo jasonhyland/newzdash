@@ -10,14 +10,16 @@ $stats = new Stats;
 <html lang="en">
 <head>
 	<!--
-		Charisma v1.0.0
+		NewzDash v1.0.0
 
-		Copyright 2012 Muhammad Usman
+		Copyright 2013 Eric Young
 		Licensed under the Apache License v2.0
 		http://www.apache.org/licenses/LICENSE-2.0
 
-		http://usman.it
-		http://twitter.com/halalit_usman
+		http://aceshome.com
+	
+		Based off original work titled 'Charisma' by Muhammad Usman
+		   original license in doc/charisma-license.txt
 	-->
 	<meta charset="utf-8">
 	<title>NewzNab Dashboard</title>
