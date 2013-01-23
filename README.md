@@ -23,3 +23,11 @@ ToDo
 - Add system information (such as memory and cpu consumption, and disk space)
 - Enable newzdash version checking and automatic updates
 
+Screens
+
+[ScreenShot](https://raw.github.com/tssgery/newzdash/master/screens/unnamed-dash.jpg)
+
+[ScreenShot](https://raw.github.com/tssgery/newzdash/master/screens/unnamed-recent.jpg)
+
+[ScreenShot](https://raw.github.com/tssgery/newzdash/master/screens/unnamed-stats.jpg)
+
