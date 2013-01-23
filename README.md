@@ -11,6 +11,7 @@ NewzDash is a Dashboard application built for the newznab indexing software (new
 
 Installation Instructions
 
+- ensure that the php5-svn module is installed, on ubuntu/debian you can install with 'sudo apt-get install php5-svn'
 - clone the git repository: 'git clone git@github.com:tssgery/newzdash.git'
 - withing newzdash directory, copy config.php.base file to config.php
 - Edit config.php, setting the directory name of newznab installation and URL to access newznab
