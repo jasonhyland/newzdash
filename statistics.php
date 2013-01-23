@@ -114,7 +114,7 @@ $stats = new Stats;
 
 			
 			<div class="row-fluid">
-				<div class="box span12">
+				<div class="box span6">
 					<div class="box-header well" data-original-title>
 						<h2><i class="icon-th"></i> Releases per Category</h2>
 						<div class="box-icon">
@@ -130,11 +130,7 @@ $stats = new Stats;
 					</div>
 				</div>
 						
-			</div><!--/row-->			
-							
-						
-			<div class="row-fluid">
-				<div class="box span12">
+				<div class="box span6">
 					<div class="box-header well" data-original-title>
 						<h2><i class="icon-th"></i> Releases per Group</h2>
 						<div class="box-icon">
@@ -148,9 +144,11 @@ $stats = new Stats;
 					<div class="box-content">
 					   <?php $stats->buildGroupTable(); ?>
 					</div>
-				</div>
+				</div>						
+			</div><!--/row-->			
+							
 						
-			</div><!--/row-->							
+					
 						
 							
 					

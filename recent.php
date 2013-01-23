@@ -150,9 +150,79 @@ $rr = new RecentReleases;
 					  <?php $rr->buildRecentTVTable(); ?> 
 					</div>
 				</div>
-						
 			</div><!--/row-->
 
+			<div class="row-fluid">
+				<div class="box span12">
+					<div class="box-header well" data-original-title>
+						<h2><i class="icon-th"></i> Game</h2>
+						<div class="box-icon">
+
+							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
+						  <!--						
+							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+						-->
+						</div>
+					</div>
+					<div class="box-content">
+					  <?php $rr->buildRecentGameTable(); ?> 
+					</div>
+				</div>
+			</div><!--/row-->
+			
+			<div class="row-fluid">
+				<div class="box span12">
+					<div class="box-header well" data-original-title>
+						<h2><i class="icon-th"></i> PC</h2>
+						<div class="box-icon">
+
+							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
+						  <!--						
+							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+						-->
+						</div>
+					</div>
+					<div class="box-content">
+					  <?php $rr->buildRecentPCTable(); ?> 
+					</div>
+				</div>
+			</div><!--/row-->
+			
+			<div class="row-fluid">
+				<div class="box span12">
+					<div class="box-header well" data-original-title>
+						<h2><i class="icon-th"></i> Other</h2>
+						<div class="box-icon">
+
+							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
+						  <!--						
+							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+						-->
+						</div>
+					</div>
+					<div class="box-content">
+					  <?php $rr->buildRecentOtherTable(); ?> 
+					</div>
+				</div>
+			</div><!--/row-->			
+
+			<div class="row-fluid">
+				<div class="box span12">
+					<div class="box-header well" data-original-title>
+						<h2><i class="icon-th"></i> XXX</h2>
+						<div class="box-icon">
+
+							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
+						  <!--						
+							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+						-->
+						</div>
+					</div>
+					<div class="box-content">
+					  <?php $rr->buildRecentXXXTable(); ?> 
+					</div>
+				</div>
+			</div><!--/row-->
 			
 			
 					<!-- content ends -->
