@@ -13,9 +13,10 @@ class RecentReleases
 	
         public function buildRecentTable($newznab_cat)
         {
-		echo '<table class="table table-striped table-bordered bootstrap-datatable datatable">
+		echo '<table class="table table-striped table-bordered bootstrap-datatable datatable " >
 							  <thead>
 								  <tr>
+									  <th style="display:none;">ordinal</th>
 									  <th>Name</th>
 									  <th>Category</th>
 									  <th>Date (GMT)</th>                                
@@ -43,7 +44,8 @@ class RecentReleases
 		$sql = sprintf("select r.name as name,r.adddate as date,r.guid as guid,c.title as title from releases r inner join category c on c.ID=r.categoryID where r.categoryID in (%s) order by r.adddate desc limit 0,50", $catstring);
 		# print $sql;
 		
-                $res = $db->query($sql);              
+                $res = $db->query($sql);
+		$ordinal=0;
                 
                 foreach ($res as $row)
                 {
@@ -54,6 +56,10 @@ class RecentReleases
 			$name=$name."...";
 		    }
                     echo '<tr>';
+		    
+		    echo '<td style="display:none;">'.$ordinal.'</td>';
+		    $ordinal=$ordinal+1;
+		    
                     echo '<td>';
 		    echo '<a href="'.NEWZNAB_URL.'/details/'.$row["guid"].'" class="btn btn-mini" target="_blank"><i class="icon-globe"></i></a> '.$name;
                     #echo '<a href="'.NEWZNAB_URL.'/details/'.$row["guid"].'">'.$row['name'].'</a>';
@@ -66,6 +72,7 @@ class RecentReleases
                     echo '<td>';
                     echo $row["date"];
                     echo '</td>';
+		    
                     echo '</tr>';
                 }
             

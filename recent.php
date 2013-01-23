@@ -63,6 +63,8 @@ $rr = new RecentReleases;
 </head>
 
 <body>
+
+	
 <?php include 'includes/topbar.php'; ?>
 
 		<div class="container-fluid">
@@ -98,7 +100,7 @@ $rr = new RecentReleases;
 			<div class="row-fluid">
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
-						<h2><i class="icon-th"></i> Movies</h2>
+						<h2><i class="icon-film"></i> Movies</h2>
 						<div class="box-icon">
 
 							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
@@ -118,7 +120,7 @@ $rr = new RecentReleases;
 			<div class="row-fluid">
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
-						<h2><i class="icon-th"></i> Music</h2>
+						<h2><i class="icon-headphones"></i> Music</h2>
 						<div class="box-icon">
 
 							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
@@ -137,7 +139,7 @@ $rr = new RecentReleases;
 			<div class="row-fluid">
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
-						<h2><i class="icon-th"></i> TV</h2>
+						<h2><i class="icon-picture"></i> TV</h2>
 						<div class="box-icon">
 
 							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
@@ -155,7 +157,7 @@ $rr = new RecentReleases;
 			<div class="row-fluid">
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
-						<h2><i class="icon-th"></i> Game</h2>
+						<h2><i class="icon-flag"></i> Game</h2>
 						<div class="box-icon">
 
 							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
@@ -173,7 +175,7 @@ $rr = new RecentReleases;
 			<div class="row-fluid">
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
-						<h2><i class="icon-th"></i> PC</h2>
+						<h2><i class="icon-briefcase"></i> PC</h2>
 						<div class="box-icon">
 
 							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
@@ -191,7 +193,7 @@ $rr = new RecentReleases;
 			<div class="row-fluid">
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
-						<h2><i class="icon-th"></i> Other</h2>
+						<h2><i class="icon-bookmark"></i> Other</h2>
 						<div class="box-icon">
 
 							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
@@ -209,7 +211,7 @@ $rr = new RecentReleases;
 			<div class="row-fluid">
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
-						<h2><i class="icon-th"></i> XXX</h2>
+						<h2><i class="icon-fire"></i> XXX</h2>
 						<div class="box-icon">
 
 							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
@@ -250,6 +252,7 @@ $rr = new RecentReleases;
 	  <?php include 'includes/bottombar.php'; ?>
 		
 	</div><!--/.fluid-container-->
+	
 
 	<!-- external javascript
 	================================================== -->
@@ -325,6 +328,7 @@ $rr = new RecentReleases;
 	<!-- application script for Charisma demo -->
 	<script src="js/charisma.js"></script>
 	
-		
+
+
 </body>
 </html>

@@ -21,7 +21,7 @@ class DashData
 	
 	    $last = "unknown";
 	    
-	    printf('<span class="icon32 icon-color icon-clock"></span>
+	    printf('<span class="icon32 icon-blue icon-clock"></span>
 			<div>Last Group Update</div>
 			<div>%s</div>', $data['last_updated']);
 	}
@@ -36,7 +36,7 @@ class DashData
 	    $data = $db->queryOneRow($sql);
 	
 	    
-	    printf('<span class="icon32 icon-color icon-clock"></span>
+	    printf('<span class="icon32 icon-blue icon-clock"></span>
 			<div>Last Binary Added</div>
 			<div>%s</div>', $data['dateadded']);
 	}	
@@ -50,7 +50,7 @@ class DashData
 	    $db = new DB;
 	    $data = $db->queryOneRow($sql);
 	  
-	    printf('<span class="icon32 icon-color icon-clock"></span>
+	    printf('<span class="icon32 icon-blue icon-clock"></span>
 			<div>Last Release Created</div>
 			<div>%s</div>', $data['adddate']);
 	}    
@@ -66,7 +66,7 @@ class DashData
 	    $db = new DB;
 	    $data = $db->queryOneRow($sql);
 	
-	    printf('<span class="icon32 icon-color icon-inbox"></span>
+	    printf('<span class="icon32 icon-blue icon-gear"></span>
 			<div>Regex Version</div>
 			<div>%s</div>', $data['value']);
 	}
@@ -83,7 +83,7 @@ class DashData
 	    # now, we want just the numbers as the version is stored as '#Rev: number $'
 	    preg_match('/[0-9]+/', $data['value'], $version);
 
-	    printf('<span class="icon32 icon-color icon-inbox"></span>
+	    printf('<span class="icon32 icon-blue icon-gear"></span>
 			<div>Database Version</div>
 			<div>%s</div>', $version[0]);
 	}
@@ -148,7 +148,7 @@ class DashData
 		$notification_string=sprintf('<span class="notification red">%d</span>', $updates_available);
 	    }
 	    
-	    printf('<span class="icon32 icon-color icon-archive"></span>
+	    printf('<span class="icon32 icon-blue icon-gear"></span>
 			<div>SVN Revision</div>
 			<div>%s</div>
 			%s', $version_string, $notification_string);
@@ -164,7 +164,7 @@ class DashData
             $r=new Releases;
             $total_releases = $r->getCount();
 	
-	    printf('<span class="icon32 icon-color icon-star-on"></span>
+	    printf('<span class="icon32 icon-blue icon-star-on"></span>
 			<div>Total Releases</div>
 			<div>%s</div>', $total_releases);    
         }
@@ -174,7 +174,7 @@ class DashData
             $g = new Groups;
             $active_groups = $g->getCount("", true);
  				
-	    printf('<span class="icon32 icon-color icon-comment"></span>
+	    printf('<span class="icon32 icon-blue icon-comment"></span>
 			<div>Active Groups</div>
 			<div>%s</div>', $active_groups);   					
         }
@@ -200,7 +200,7 @@ class DashData
             $data = $db->query($sql_query);
 	    $total = $data[0]['ToDo'];
 
-	    printf('<span class="icon32 icon-color icon-star-on"></span>
+	    printf('<span class="icon32 icon-blue icon-star-off"></span>
 			<div>Pending Processing</div>
 			<div>%s</div>', $total);   	
     
