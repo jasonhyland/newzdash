@@ -7,7 +7,7 @@ require_once(WWW_DIR."/lib/category.php");
 require_once(WWW_DIR."/lib/site.php");
 
 
-class Util
+class Utilities
 {
         
         public function getNewznabLink()
@@ -15,6 +15,8 @@ class Util
             # echo "<a href=http://nzbarchive>"; 
 	    echo "<a href=\"".NEWZNAB_URL."\">NewzNab</a>"; 
         }
+	
+
 }
         
                         

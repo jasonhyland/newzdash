@@ -1,5 +1,6 @@
 <?php
 require_once('config.php');
+require_once("lib/util.php");
 require_once(WWW_DIR."/lib/releases.php");
 require_once(WWW_DIR."/lib/groups.php");
 require_once(WWW_DIR."/lib/framework/db.php");
@@ -7,23 +8,57 @@ require_once(WWW_DIR."/lib/category.php");
 require_once(WWW_DIR."/lib/site.php");
 
 
+
+
+
+
+
 class DashData
 {
-    
+
+	public function time_elapsed($secs)
+	{
+	    if ($secs==0)
+	    {
+		return "now";
+	    }
+	    
+	    $bit = array(
+		'y' => $secs / 31556926 % 12,
+		'w' => $secs / 604800 % 52,
+		'd' => $secs / 86400 % 7,
+		'h' => $secs / 3600 % 24,
+		'm' => $secs / 60 % 60,
+		's' => $secs % 60
+		);
+        
+		foreach($bit as $k => $v)
+		{
+			if($v > 0)
+			{
+				$ret[] = $v . $k;
+			}
+		}
+        
+		$strtext = join(' ', $ret) . " ago";
+		return $strtext;
+	}
+	    
 	/**
 	 * getLastGroupUpdate
 	 */
 	public function getLastGroupUpdate()
 	{
-	    $sql=sprintf("select name,last_updated from groups order by last_updated desc limit 0,5");
+	    $sql=sprintf("select name,last_updated,NOW(),unix_timestamp(NOW())-unix_timestamp(last_updated) as age from groups order by last_updated desc limit 0,5");
 	    $db = new DB;
 	    $data = $db->queryOneRow($sql);
-	
-	    $last = "unknown";
+	    $age_of_package=DashData::time_elapsed($data['age']);
+	    
+
 	    
 	    printf('<span class="icon32 icon-blue icon-clock"></span>
 			<div>Last Group Update</div>
-			<div>%s</div>', $data['last_updated']);
+			<div>%s</div>', $age_of_package);
 	}
     
 	/**
@@ -31,14 +66,22 @@ class DashData
 	 */
 	public function getLastBinaryAdded()
 	{
+
+
+	    /*
 	    $sql=sprintf("select relname,dateadded from binaries order by dateadded desc limit 0,5");
 	    $db = new DB;
 	    $data = $db->queryOneRow($sql);
-	
-	    
+	    */
+	    $sql=sprintf("select relname,dateadded,NOW(),unix_timestamp(NOW())-unix_timestamp(dateadded) as age from binaries order by dateadded desc limit 0,5");
+	    $db = new DB;
+	    $data = $db->queryOneRow($sql);
+	    $age_of_package=DashData::time_elapsed($data['age']);
+
+    
 	    printf('<span class="icon32 icon-blue icon-clock"></span>
 			<div>Last Binary Added</div>
-			<div>%s</div>', $data['dateadded']);
+			<div>%s</div>', $age_of_package);
 	}	
     
 	/**
@@ -46,13 +89,14 @@ class DashData
 	 */
 	public function getLastReleaseCreated()
 	{
-	    $sql=sprintf("select name,adddate from releases order by adddate desc limit 0,5");
+	    $sql=sprintf("select name,adddate,unix_timestamp(NOW())-unix_timestamp(adddate) as age from releases order by adddate desc limit 0,5");
 	    $db = new DB;
 	    $data = $db->queryOneRow($sql);
-	  
+	    $age_of_package=DashData::time_elapsed($data['age']);
+	    
 	    printf('<span class="icon32 icon-blue icon-clock"></span>
 			<div>Last Release Created</div>
-			<div>%s</div>', $data['adddate']);
+			<div>%s</div>', $age_of_package);
 	}    
     				
    
@@ -145,7 +189,8 @@ class DashData
 	    {
 		$version_string=sprintf("Running %s, Latest available is %s", $current_version, $latest_version);
 		$updates_available=intval($latest_version)-intval($current_version);
-		$notification_string=sprintf('<span class="notification red">%d</span>', $updates_available);
+		# $notification_string=sprintf('<span class="notification red">%d</span>', $updates_available);
+		$notification_string=sprintf('<span class="notification red">!</span>');
 	    }
 	    
 	    printf('<span class="icon32 icon-blue icon-gear"></span>
