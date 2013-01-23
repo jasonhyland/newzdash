@@ -13,12 +13,12 @@ class RecentReleases
 	
         public function buildRecentTable($newznab_cat)
         {
-		echo '<table class="table">
+		echo '<table class="table table-striped table-bordered bootstrap-datatable datatable">
 							  <thead>
 								  <tr>
 									  <th>Name</th>
-									  <th>Category<th>
-									  <th>Date</th>                                
+									  <th>Category</th>
+									  <th>Date (GMT)</th>                                
 								  </tr>
 							  </thead>   
 							  <tbody>';
@@ -40,25 +40,32 @@ class RecentReleases
 		
 		$catstring=implode(',', $catarray);		
 		
-                # $sql = sprintf("SELECT * FROM `releases` where categoryID in (%s) order by updatedate desc limit 0,10", $catstring);
-                $sql = sprintf("select r.name as name,r.updatedate as updatedate,c.title as title from releases r inner join category c on c.ID=r.categoryID where r.categoryID in (%s) order by r.updatedate desc limit 0,10", $catstring);
+
+                $sql = sprintf("select r.name as name,r.adddate as date,r.guid as guid,c.title as title from releases r inner join category c on c.ID=r.categoryID where r.categoryID in (%s) order by r.adddate desc limit 0,50", $catstring);
 		# print $sql;
 		
                 $res = $db->query($sql);              
                 
                 foreach ($res as $row)
                 {
+		    $name=$row["name"];
+		    if (strlen($name)>50)
+		    {
+			$name=substr($row["name"],0,45);
+			$name=$name."...";
+		    }
                     echo '<tr>';
                     echo '<td>';
-                    echo $row['name'];
+		    echo '<a href="'.NEWZNAB_URL.'/details/'.$row["guid"].'" class="btn btn-mini" target="_blank"><i class="icon-globe"></i></a> '.$name;
+                    #echo '<a href="'.NEWZNAB_URL.'/details/'.$row["guid"].'">'.$row['name'].'</a>';
                     echo '</td>';
 
 		    echo '<td>';
                     echo $row['title'];
                     echo '</td>';
 		    
-                    echo '<td >';
-                    echo $row["updatedate"];
+                    echo '<td class="center">';
+                    echo $row["date"];
                     echo '</td>';
                     echo '</tr>';
                 }

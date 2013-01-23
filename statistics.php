@@ -93,80 +93,68 @@ $stats = new Stats;
 			</div>
 			<!-- breadcrumbs end -->
 			
-		
-					
 			<div class="row-fluid">
-				<div class="box span4">
+				<div class="box span12">
 					<div class="box-header well" data-original-title>
-						<h2><i class="icon-th"></i> Releases</h2>
+						<h2><i class="icon-th"></i> To Be Processed</h2>
 						<div class="box-icon">
-						  <!--
+
 							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
+						  <!--						
 							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
 						-->
 						</div>
 					</div>
 					<div class="box-content">
-					  <?php $stats->buildReleaseTable(); ?>
-
-						 <div class="pagination pagination-centered">
-						  <ul>
-							<li><a href="#">Prev</a></li>
-							<li class="active">
-							  <a href="#">1</a>
-							</li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">Next</a></li>
-						  </ul>
-						</div>     
+					  <?php $stats->buildPendingTable(); ?>   
 					</div>
 				</div>
 						
-				<div class="box span4">
-					<div class="box-header well" data-original-title>
-						<h2><i class="icon-th"></i> Groups</h2>
-						<div class="box-icon">
-						  <!--
-							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
-							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
-						-->
-						</div>
-					</div>
-					<div class="box-content">
-					  <?php $stats->buildGroupTable(); ?>
-						 <div class="pagination pagination-centered">
-						  <ul>
-							<li><a href="#">Prev</a></li>
-							<li class="active">
-							  <a href="#">1</a>
-							</li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">Next</a></li>
-						  </ul>
-						</div>     
-					</div>
-				</div>
-				
-				<div class="box span4">
-					<div class="box-header well" data-original-title>
-						<h2><i class="icon-th"></i> Post-Process</h2>
-						<div class="box-icon">
-						  <!--
-							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
-							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
-						-->
-						</div>
-					</div>
-					<div class="box-content">
-					  <?php $stats->buildPendingTable(); ?>  
-					</div>
-				</div>
-				
 			</div><!--/row-->
+
+			
+			<div class="row-fluid">
+				<div class="box span12">
+					<div class="box-header well" data-original-title>
+						<h2><i class="icon-th"></i> Releases per Category</h2>
+						<div class="box-icon">
+
+							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
+						  <!--						
+							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+						-->
+						</div>
+					</div>
+					<div class="box-content">
+					   <?php $stats->buildReleaseTable(); ?>
+					</div>
+				</div>
+						
+			</div><!--/row-->			
+							
+						
+			<div class="row-fluid">
+				<div class="box span12">
+					<div class="box-header well" data-original-title>
+						<h2><i class="icon-th"></i> Releases per Group</h2>
+						<div class="box-icon">
+
+							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
+						  <!--						
+							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+						-->
+						</div>
+					</div>
+					<div class="box-content">
+					   <?php $stats->buildGroupTable(); ?>
+					</div>
+				</div>
+						
+			</div><!--/row-->							
+						
+							
+					
+
 
 			
        

@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<?php
+require_once('config.php');
+require_once("lib/util.php");
+
+$util = new Util;
+
+?>
+
 <!-- topbar starts -->
 <div class="navbar">
 	<div class="navbar-inner">
@@ -7,7 +16,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</a>
-			<a class="brand" href="index.php"><span>Unnamed</span></a>
+			<a class="brand" href="index.php"><span>NewzDash</span></a>
 			
 			<!-- theme selector starts -->
 			<div class="btn-group pull-right theme-container" >
@@ -45,12 +54,7 @@
 			
 			<div class="top-nav nav-collapse">
 				<ul class="nav">
-					<li><a href="#">Visit Site</a></li>
-					<li>
-						<form class="navbar-search pull-left">
-							<input placeholder="Search" class="search-query span2" name="query" type="text">
-						</form>
-					</li>
+					<li><?php $util->getNewznabLink() ?></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>

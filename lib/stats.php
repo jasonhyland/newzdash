@@ -12,7 +12,7 @@ class Stats
         
         public function buildReleaseTable()
         {
-            echo '<table class="table">
+            echo '<table class="table table-striped table-bordered bootstrap-datatable datatable">
 							  <thead>
 								  <tr>
 									  <th>Category</th>
@@ -53,7 +53,7 @@ class Stats
         
         public function buildGroupTable()
         {
-            echo '<table class="table">
+            echo '<table class="table table-striped table-bordered bootstrap-datatable datatable">
 							  <thead>
 								  <tr>
 									  <th>Group</th>
@@ -95,7 +95,7 @@ class Stats
         
         public function buildPendingTable()
         {
-            echo '<table class="table">
+            echo '<table class="table table-striped table-bordered ">
 							  <thead>
 								  <tr>
 									  <th>Group</th>

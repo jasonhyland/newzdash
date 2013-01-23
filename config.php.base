@@ -4,10 +4,10 @@
 // Config you must change - updated by installer.
 //=========================
 
-require('/home/nzb/newznab/www/config.php');
+define('NEWZNAB_HOME', '/home/nzb/newznab');
+define('NEWZNAB_URL',   'http://nzbarchive');
 
-define('SVN_USERNAME', 'username');
-define('SVN_PASSWORD', 'password');
+require(NEWZNAB_HOME.'/www/config.php');
 
 ?>
 
