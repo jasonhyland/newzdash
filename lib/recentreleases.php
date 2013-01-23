@@ -40,8 +40,7 @@ class RecentReleases
 		
 		$catstring=implode(',', $catarray);		
 		
-
-                $sql = sprintf("select r.name as name,r.adddate as date,r.guid as guid,c.title as title from releases r inner join category c on c.ID=r.categoryID where r.categoryID in (%s) order by r.adddate desc limit 0,50", $catstring);
+		$sql = sprintf("select r.name as name,r.adddate as date,r.guid as guid,c.title as title from releases r inner join category c on c.ID=r.categoryID where r.categoryID in (%s) order by r.adddate desc limit 0,50", $catstring);
 		# print $sql;
 		
                 $res = $db->query($sql);              
@@ -64,7 +63,7 @@ class RecentReleases
                     echo $row['title'];
                     echo '</td>';
 		    
-                    echo '<td class="center">';
+                    echo '<td>';
                     echo $row["date"];
                     echo '</td>';
                     echo '</tr>';
