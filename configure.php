@@ -219,9 +219,11 @@ $configform = new ConfigForm;
 			debug: true,
 			rules: {
 				newznab_url: "required",
+				newznab_home: "required"
 			},
 			messages: {
 				newznab_url: "Please supply the url for newznab.",
+				newznab_home: "Please supply the directory to where newznab is installed."
 			},
 			submitHandler: function(form) {
 				// do other stuff for a valid form

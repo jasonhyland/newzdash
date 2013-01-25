@@ -8,7 +8,7 @@ class ConfigForm
 
 	public function getNewznabValues()
 	{
-		/*
+
 		printf('<div class="control-group">
 								<label class="control-label" for="focusedInput">NewzNab Directory</label>
 								<div class="controls">
@@ -22,13 +22,7 @@ class ConfigForm
 								  <input class="input-xlarge" name="newznab_url" id="newznab_url" type="text" value="%s">
 								</div>
 							  </div>', NEWZNAB_HOME, NEWZNAB_URL);
-		*/
-		printf(' <div class="control-group">
-								<label class="control-label" for="focusedInput">NewzNab URL</label>
-								<div class="controls">
-								  <input class="input-xlarge" name="newznab_url" id="newznab_url" type="text" value="%s">
-								</div>
-							  </div>', NEWZNAB_URL);
+
 	}
 	
 	

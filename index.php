@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <?php
 require_once('config.php');
+
+if (DB_TYPE!="mysql")
+{
+	# send the browser to the configuration page, something is wrong!
+	header("Location: configure.php");
+}
+
 require_once("lib/dashdata.php");
 
 $dashdata = new DashData;

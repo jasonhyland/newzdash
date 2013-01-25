@@ -5,7 +5,7 @@ require_once('config.php');
 $newconfig .= "<?php\n";
 
 $newconfig .= "define(NEWZNAB_URL,'".$_POST['newznab_url']."');\n";
-# $newconfig .= "define(NEWZNAB_HOME,'".$_POST['newznab_home']."');\n";
+$newconfig .= "define(NEWZNAB_HOME,'".$_POST['newznab_home']."');\n";
 
 $newconfig .= "define(SHOW_MOVIES,'".$_POST['show_movies']."');\n";
 $newconfig .= "define(SHOW_TV,'".$_POST['show_tv']."');\n";
