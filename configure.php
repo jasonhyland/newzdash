@@ -54,6 +54,8 @@
 	<!-- The fav icon -->
 	<link rel="shortcut icon" href="img/favicon.ico">
 		
+		
+	
 </head>
 
 <body>
@@ -94,30 +96,67 @@
 
 					</div>
 					<div class="box-content">
-						<form class="form-horizontal">
+						<form class="form-horizontal" method="POST" name="config" id="config" action="" >
 							<fieldset>
 							  <div class="control-group">
 								<label class="control-label" for="focusedInput">NewzNab Directory</label>
 								<div class="controls">
-								  <input class="input-xlarge" id="newznab_directory" type="text" value="edit NEWZNAB_HOME in config.php">
+								  <input class="input-xlarge" name="newznab_directory" id="newznab_directory" type="text" value="edit NEWZNAB_HOME in config.php">
 								</div>
 								
 							  </div>
 							  <div class="control-group">
 								<label class="control-label" for="focusedInput">NewzNab URL</label>
 								<div class="controls">
-								  <input class="input-xlarge" id="newnzb_url" type="text" value="edit NEWZNAB_URL in config.php">
+								  <input class="input-xlarge" name="newznab_url" id="newznab_url" type="text" value="edit NEWZNAB_URL in config.php">
 								</div>
 							  </div>
 							  
-							  
-							  
+
+							 <div class="control-group">
+								<label class="control-label" for="optionsShowLatest">Show Latest...</label>
+								<div class="controls">
+								  <label class="checkbox">
+									<input type="checkbox" id="optionsShowLatest" value="option1" >
+									Movies
+								  </label>								  
+								  <label class="checkbox">
+									<input type="checkbox" id="optionsShowLatest" value="option1" >
+									Television
+								  </label>
+								  <label class="checkbox">
+									<input type="checkbox" id="optionsShowLatest" value="option1" >
+									Music
+								  </label>
+								  <label class="checkbox">
+									<input type="checkbox" id="optionsShowLatest" value="option1" >
+									Games
+								  </label>
+								  <label class="checkbox">
+									<input type="checkbox" id="optionsShowLatest" value="option1" >
+									PC
+								  </label>								  
+								  <label class="checkbox">
+									<input type="checkbox" id="optionsShowLatest" value="option1" >
+									Other
+								  </label>
+								  <label class="checkbox">
+									<input type="checkbox" id="optionsShowLatest" value="option1" >
+									XXX
+								  </label>								  
+								</div>
+							  </div>
+							 
+							 
+
+							 
 							  <div class="form-actions">
 								<button type="submit" class="btn btn-primary">Save changes</button>
 								<button class="btn">Cancel</button>
 							  </div>
 							</fieldset>
 						  </form>
+					      <div id="results"></div>
 					</div>
 				</div><!--/span-->
 			
@@ -130,6 +169,7 @@
 				
 		<hr>
 
+		<div id="results"><div>
 	  <?php include 'includes/bottombar.php'; ?>
 		
 	</div><!--/.fluid-container-->
@@ -208,6 +248,29 @@
 	<!-- application script for Charisma demo -->
 	<script src="js/charisma.js"></script>
 	
+	<script src="js/jquery.validate.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$("#config").validate({
+			debug: true,
+			rules: {
+				newznab_url: "required",
+				newznab_directory: "required"
+			},
+			messages: {
+				newznab_url: "Please supply the url for newznab.",
+				newznab_directory: "Where is newznab installed?",
+			},
+			submitHandler: function(form) {
+				// do other stuff for a valid form
+				$.post('saveconfiguration.php', $("#config").serialize(), function(data) {
+					$('#results').html(data);
+					alert(data);
+				});
+			}
+		});
+	});
+	</script>		
 		
 </body>
 </html>
