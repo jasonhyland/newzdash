@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<?php
+require_once('config.php');
+require_once("lib/configform.php");
+
+$configform = new ConfigForm;
+
+?>
+
 <html lang="en">
 <head>
 	<!--
@@ -98,73 +106,12 @@
 					<div class="box-content">
 						<form class="form-horizontal" method="POST" name="config" id="config" action="" >
 							<fieldset>
-							  <div class="control-group">
-								<label class="control-label" for="focusedInput">NewzNab Directory</label>
-								<div class="controls">
-								  <input class="input-xlarge" name="newznab_directory" id="newznab_directory" type="text" value="edit NEWZNAB_HOME in config.php">
-								</div>
-								
-							  </div>
-							  <div class="control-group">
-								<label class="control-label" for="focusedInput">NewzNab URL</label>
-								<div class="controls">
-								  <input class="input-xlarge" name="newznab_url" id="newznab_url" type="text" value="edit NEWZNAB_URL in config.php">
-								</div>
-							  </div>
+							  <?php $configform->getNewznabValues(); ?>
 							  
-
-							 <div class="control-group">
-								<label class="control-label" for="optionsShowLatest">Show Recent...</label>
-								<div class="controls">
-								  <label class="checkbox">
-									<input type="checkbox" name="show_movies" id="optionsShowLatest" value="true" >
-									Movies
-								  </label>								  
-								  <label class="checkbox">
-									<input type="checkbox" name="show_tv" id="optionsShowLatest" value="true" >
-									Television
-								  </label>
-								  <label class="checkbox">
-									<input type="checkbox" name="show_music" id="optionsShowLatest" value="true" >
-									Music
-								  </label>
-								  <label class="checkbox">
-									<input type="checkbox" name="show_games" id="optionsShowLatest" value="true" >
-									Games
-								  </label>
-								  <label class="checkbox">
-									<input type="checkbox" name="show_pc" id="optionsShowLatest" value="true" >
-									PC
-								  </label>								  
-								  <label class="checkbox">
-									<input type="checkbox" name="show_other" id="optionsShowLatest" value="true" >
-									Other
-								  </label>
-								  <label class="checkbox">
-									<input type="checkbox" name="show_xxx" id="optionsShowLatest" value="true" >
-									XXX
-								  </label>								  
-								</div>
-							  </div>
+							  <?php $configform->getRecentCheckboxes(); ?>
 							 
-							 <div class="control-group">
-								<label class="control-label" for="optionsShowLatest">Show Statistics...</label>
-								<div class="controls">
-								  <label class="checkbox">
-									<input type="checkbox" name="show_processing" id="optionsShowLatest" value="true" >
-									To Be Processed
-								  </label>								  
-								  <label class="checkbox">
-									<input type="checkbox" name="show_rpc" id="optionsShowLatest" value="true" >
-									Releases per Category
-								  </label>
-								  <label class="checkbox">
-									<input type="checkbox" name="show_rpg" id="optionsShowLatest" value="true" >
-									Releases per Group
-								  </label>
-								  
-								</div>
-							  </div>							 
+							  <?php $configform->getStatsCheckboxes(); ?> 
+							 						 
 
 							 
 							  <div class="form-actions">
@@ -272,11 +219,9 @@
 			debug: true,
 			rules: {
 				newznab_url: "required",
-				newznab_directory: "required"
 			},
 			messages: {
 				newznab_url: "Please supply the url for newznab.",
-				newznab_directory: "Where is newznab installed?",
 			},
 			submitHandler: function(form) {
 				// do other stuff for a valid form
