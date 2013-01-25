@@ -36,7 +36,7 @@ class RecentReleases
 		
 		foreach ($allcategories as $cat)
 		{
-			array_push($catarray, $catstring.($cat['ID']));
+			array_push($catarray, $cat['ID']);
 		}
 		
 		$catstring=implode(',', $catarray);		
