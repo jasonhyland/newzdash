@@ -14,11 +14,12 @@
 						Directory set to: <b>".$_POST['newznab_directory']."</b><br>";
 */
 
-	# print '<div class="alert alert-success" ><button type="button" class="close" data-dismiss="alert">&times;</button><strong>Warning!</strong> Best check yo self, you\'re not looking too good.</div>';
-	print '<div class="alert alert-success"><strong>Success!</strong> The setttings have been saved.</div>';	
+	
+	print '<div class="alert alert-info" id="savemessage"><strong>Success!</strong> The setttings have been saved.</div>';
+	
 	print '<script type="text/javascript">
 			window.setTimeout(function() {
-				$(".alert-success").fadeTo(500, 0).slideUp(500, function(){
+				$("#savemessage").fadeTo(500, 0).slideUp(500, function(){
 				$(this).remove(); 
 				});
 			}, 5000);
