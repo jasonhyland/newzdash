@@ -1,13 +1,19 @@
 <?php
 
-//=========================
-// Config you must change - updated by installer.
-//=========================
+define(NEWZNAB_URL,'http://myhost');
+define(NEWZNAB_HOME,'/var/www/newznab');
+define(SHOW_MOVIES,'checked');
+define(SHOW_TV,'checked');
+define(SHOW_MUSIC,'checked');
+define(SHOW_GAMES,'checked');
+define(SHOW_PC,'checked');
+define(SHOW_OTHER,'checked');
+define(SHOW_XXX,'checked');
+define(SHOW_PROCESSING,'checked');
+define(SHOW_RPC,'checked');
+define(SHOW_RPG,'checked');
 
-define('NEWZNAB_HOME', '/home/nzb/newznab');
-define('NEWZNAB_URL',   'http://nzbarchive');
 
-require(NEWZNAB_HOME.'/www/config.php');
 
 ?>
 

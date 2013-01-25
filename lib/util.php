@@ -1,5 +1,5 @@
 <?php
-require_once('config.php');
+include('config.php');
 
 class Utilities
 {

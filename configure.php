@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
-require_once('config.php');
+include('config.php');
+include('config.php.base');
 require_once("lib/configform.php");
 
 $configform = new ConfigForm;

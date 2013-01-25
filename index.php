@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-require_once('config.php');
+include('config.php');
 
 if (DB_TYPE!="mysql")
 {
