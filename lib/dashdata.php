@@ -169,35 +169,42 @@ class DashData
 	public function getSubversionInfo()
 	{
 
-	    #svn_auth_set_parameter( SVN_AUTH_PARAM_DEFAULT_USERNAME, SVN_USERNAME );
-	    #svn_auth_set_parameter( SVN_AUTH_PARAM_DEFAULT_PASSWORD, SVN_PASSWORD );
-	    $svn_stat=svn_status(realpath(NEWZNAB_HOME), SVN_NON_RECURSIVE|SVN_ALL);
-	    $current_version=sprintf("%s", $svn_stat[0]["revision"]);
-	    
+	    if (extension_loaded('svn')) {
+		#svn_auth_set_parameter( SVN_AUTH_PARAM_DEFAULT_USERNAME, SVN_USERNAME );
+		#svn_auth_set_parameter( SVN_AUTH_PARAM_DEFAULT_PASSWORD, SVN_PASSWORD );
+		$svn_stat=svn_status(realpath(NEWZNAB_HOME), SVN_NON_RECURSIVE|SVN_ALL);
+		$current_version=sprintf("%s", $svn_stat[0]["revision"]);
+		
+	
+		#$svn_info=svn_info(realpath(NEWZNAB_HOME), SVN_SHOW_UPDATES);
+		#$latest_version=sprintf("%s", $svn_info[0]["last_changed_rev"]);
+		$latest_version=DashData::getSubversionLatestFromRss();
     
-	    #$svn_info=svn_info(realpath(NEWZNAB_HOME), SVN_SHOW_UPDATES);
-	    #$latest_version=sprintf("%s", $svn_info[0]["last_changed_rev"]);
-	    $latest_version=DashData::getSubversionLatestFromRss();
-
-	      	
-	    if ($current_version === $latest_version)
-	    {
-		$version_string=sprintf("Running latest version (%s)", $current_version);
-		$notification_string="";
+		    
+		if ($current_version === $latest_version)
+		{
+		    $version_string=sprintf("Running latest version (%s)", $current_version);
+		    $notification_string="";
+		}
+		else
+		{
+		    $version_string=sprintf("Running %s, Latest available is %s", $current_version, $latest_version);
+		    $updates_available=intval($latest_version)-intval($current_version);
+		    # $notification_string=sprintf('<span class="notification red">%d</span>', $updates_available);
+		    $notification_string=sprintf('<span class="notification red">!</span>');
+		}
+		
+		printf('<span class="icon32 icon-blue icon-gear"></span>
+			    <div>SVN Revision</div>
+			    <div>%s</div>
+			    %s', $version_string, $notification_string);
 	    }
 	    else
 	    {
-		$version_string=sprintf("Running %s, Latest available is %s", $current_version, $latest_version);
-		$updates_available=intval($latest_version)-intval($current_version);
-		# $notification_string=sprintf('<span class="notification red">%d</span>', $updates_available);
-		$notification_string=sprintf('<span class="notification red">!</span>');
+		printf('<span class="icon32 icon-blue icon-gear"></span>
+			    <div>SVN Revision</div>
+			    <div>%s</div>', "php subversion module is not installed");
 	    }
-	    
-	    printf('<span class="icon32 icon-blue icon-gear"></span>
-			<div>SVN Revision</div>
-			<div>%s</div>
-			%s', $version_string, $notification_string);
-				
 	}
 	
 
