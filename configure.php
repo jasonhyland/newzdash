@@ -114,40 +114,57 @@
 							  
 
 							 <div class="control-group">
-								<label class="control-label" for="optionsShowLatest">Show Latest...</label>
+								<label class="control-label" for="optionsShowLatest">Show Recent...</label>
 								<div class="controls">
 								  <label class="checkbox">
-									<input type="checkbox" id="optionsShowLatest" value="option1" >
+									<input type="checkbox" name="show_movies" id="optionsShowLatest" value="SHOW_MOVIES" >
 									Movies
 								  </label>								  
 								  <label class="checkbox">
-									<input type="checkbox" id="optionsShowLatest" value="option1" >
+									<input type="checkbox" name="show_tv" id="optionsShowLatest" value="SHOW_TV" >
 									Television
 								  </label>
 								  <label class="checkbox">
-									<input type="checkbox" id="optionsShowLatest" value="option1" >
+									<input type="checkbox" name="show_music" id="optionsShowLatest" value="SHOW_MUSIC" >
 									Music
 								  </label>
 								  <label class="checkbox">
-									<input type="checkbox" id="optionsShowLatest" value="option1" >
+									<input type="checkbox" name="show_games" id="optionsShowLatest" value="SHOW_GAMES" >
 									Games
 								  </label>
 								  <label class="checkbox">
-									<input type="checkbox" id="optionsShowLatest" value="option1" >
+									<input type="checkbox" name="show_pc" id="optionsShowLatest" value="SHOW_PC" >
 									PC
 								  </label>								  
 								  <label class="checkbox">
-									<input type="checkbox" id="optionsShowLatest" value="option1" >
+									<input type="checkbox" name="show_other" id="optionsShowLatest" value="SHOW_OTHER" >
 									Other
 								  </label>
 								  <label class="checkbox">
-									<input type="checkbox" id="optionsShowLatest" value="option1" >
+									<input type="checkbox" name="show_xxx" id="optionsShowLatest" value="SHOW_XXX" >
 									XXX
 								  </label>								  
 								</div>
 							  </div>
 							 
-							 
+							 <div class="control-group">
+								<label class="control-label" for="optionsShowLatest">Show Statistics...</label>
+								<div class="controls">
+								  <label class="checkbox">
+									<input type="checkbox" name="show_processing" id="optionsShowLatest" value="SHOW_PROCESSING" >
+									To Be Processed
+								  </label>								  
+								  <label class="checkbox">
+									<input type="checkbox" name="show_rpc" id="optionsShowLatest" value="SHOW_RPC" >
+									Releases per Category
+								  </label>
+								  <label class="checkbox">
+									<input type="checkbox" name="show_rpg" id="optionsShowLatest" value="SHOW_RPG" >
+									Releases per Group
+								  </label>
+								  
+								</div>
+							  </div>							 
 
 							 
 							  <div class="form-actions">
@@ -265,7 +282,6 @@
 				// do other stuff for a valid form
 				$.post('saveconfiguration.php', $("#config").serialize(), function(data) {
 					$('#results').html(data);
-					alert(data);
 				});
 			}
 		});
