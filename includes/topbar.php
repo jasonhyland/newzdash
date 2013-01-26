@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-include('config.php');
+
 require_once("lib/util.php");
 
 $util = new Utilities;

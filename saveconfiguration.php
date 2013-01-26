@@ -2,21 +2,21 @@
 
 $newconfig .= "<?php\n";
 
-$newconfig .= "define(NEWZNAB_URL,'".$_POST['newznab_url']."');\n";
-$newconfig .= "define(NEWZNAB_HOME,'".$_POST['newznab_home']."');\n";
+$newconfig .= "define('NEWZNAB_URL','".$_POST['newznab_url']."');\n";
+$newconfig .= "define('NEWZNAB_HOME','".$_POST['newznab_home']."');\n";
 
-$newconfig .= "define(SHOW_MOVIES,'".$_POST['show_movies']."');\n";include(NEWZNAB_HOME.'/www/config.php');
+$newconfig .= "define('SHOW_MOVIES','".$_POST['show_movies']."');\n";include(NEWZNAB_HOME.'/www/config.php');
 
-$newconfig .= "define(SHOW_TV,'".$_POST['show_tv']."');\n";
-$newconfig .= "define(SHOW_MUSIC,'".$_POST['show_music']."');\n";
-$newconfig .= "define(SHOW_GAMES,'".$_POST['show_games']."');\n";
-$newconfig .= "define(SHOW_PC,'".$_POST['show_pc']."');\n";
-$newconfig .= "define(SHOW_OTHER,'".$_POST['show_other']."');\n";
-$newconfig .= "define(SHOW_XXX,'".$_POST['show_xxx']."');\n";
+$newconfig .= "define('SHOW_TV','".$_POST['show_tv']."');\n";
+$newconfig .= "define('SHOW_MUSIC','".$_POST['show_music']."');\n";
+$newconfig .= "define('SHOW_GAMES','".$_POST['show_games']."');\n";
+$newconfig .= "define('SHOW_PC','".$_POST['show_pc']."');\n";
+$newconfig .= "define('SHOW_OTHER','".$_POST['show_other']."');\n";
+$newconfig .= "define('SHOW_XXX','".$_POST['show_xxx']."');\n";
 
-$newconfig .= "define(SHOW_PROCESSING,'".$_POST['show_processing']."');\n";
-$newconfig .= "define(SHOW_RPC,'".$_POST['show_rpc']."');\n";
-$newconfig .= "define(SHOW_RPG,'".$_POST['show_rpg']."');\n";
+$newconfig .= "define('SHOW_PROCESSING','".$_POST['show_processing']."');\n";
+$newconfig .= "define('SHOW_RPC','".$_POST['show_rpc']."');\n";
+$newconfig .= "define('SHOW_RPG','".$_POST['show_rpg']."');\n";
 
 $newconfig .= "include(NEWZNAB_HOME.'/www/config.php');\n";
 

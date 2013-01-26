@@ -1,5 +1,5 @@
 <?php
-include('config.php');
+
 
 
 
@@ -30,7 +30,7 @@ class ConfigForm
 	
 	
 	
-        public function getRecentCheckboxes($newznab_cat)
+        public function getRecentCheckboxes()
         {
 		printf('<div class="control-group">
 								<label class="control-label" for="optionsShowLatest">Show Recent...</label>
@@ -70,7 +70,7 @@ class ConfigForm
 
         }
         
-        public function getStatsCheckboxes($newznab_cat)
+        public function getStatsCheckboxes()
         {
 		printf('<div class="control-group">
 								<label class="control-label" for="optionsShowLatest">Show Statistics...</label>

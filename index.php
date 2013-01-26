@@ -1,6 +1,8 @@
-<!DOCTYPE html>
+
 <?php
+
 include('config.php');
+
 
 if (DB_TYPE!="mysql")
 {

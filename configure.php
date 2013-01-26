@@ -1,7 +1,14 @@
-<!DOCTYPE html>
+
 <?php
-include('config.php');
-include('config.php.base');
+if (file_exists('config.php'))
+{
+  include('config.php');
+}
+else
+{
+  include('config.php.base');
+}
+
 require_once("lib/configform.php");
 
 $configform = new ConfigForm;
