@@ -92,12 +92,12 @@ $dashdata = new DashData;
 					<?php $dashdata->getSubversionInfo(); ?>
 				</a>
 				
-				<a data-rel="tooltip" title="Database Version" class="well span4 top-block" href="#">
-					<?php $dashdata->getDatabaseInfo(); ?>
+				<a data-rel="tooltip" title="Versions" class="well span4 top-block" href="#">
+					<?php $dashdata->getDatabaseAndRegexInfo(); ?>
 				</a>
 
-				<a data-rel="tooltip" title="Regular Expression Version" class="well span4 top-block" href="#">
-					<?php $dashdata->getRegexInfo(); ?>
+				<a data-rel="tooltip" title="NewzDash" class="well span4 top-block" href="#">
+					<?php $dashdata->getNewzDashInfo(); ?>
 				</a>
 			</div>
 			<!-- Version summaries end -->

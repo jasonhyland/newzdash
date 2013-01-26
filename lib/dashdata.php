@@ -103,21 +103,49 @@ class DashData
 	/**
 	 * getRegexInfo
 	 */
-	public function getRegexInfo()
+	public function getNewzDashInfo()
 	{
 	    $sql=sprintf("select * from site where `setting`='latestregexrevision'");
 	    $db = new DB;
 	    $data = $db->queryOneRow($sql);
 	
-	    printf('<span class="icon32 icon-blue icon-gear"></span>
-			<div>Regex Version</div>
-			<div>%s</div>', $data['value']);
+	    if (file_exists('.git/HEAD'))
+	    {
+		$stringfromfile = file('.git/HEAD', FILE_USE_INCLUDE_PATH);
+
+		$stringfromfile = $stringfromfile[0]; //get the string from the array
+    
+		$explodedstring = explode("/", $stringfromfile); //seperate out by the "/" in the string
+    
+		$branchname = $explodedstring[2]; //get the one that is always the branch name
+		$branchname = trim($branchname);
+		   
+		if (file_exists(".git/refs/heads/".$branchname))
+		{
+		    $gitversion=file_get_contents(".git/refs/heads/".$branchname);
+		}
+		else
+		{
+		    $gitversion="unknown";
+		}
+	    
+		printf('<span class="icon32 icon-blue icon-gear"></span>
+			    <div>NewzDash Branch: %s</div>
+			    <div>Revision: %s</div>', $branchname, substr($gitversion, 0, 10)."...");
+	    }
+	    else
+	    {
+		printf('<span class="icon32 icon-blue icon-gear"></span>
+			    <div>NewzDash Branch: %s</div>
+			    <div>Revision: %s</div>', unknown, "unknown");	    
+			    
+	    }
 	}
 	
     	/**
 	 * getDatabaseInfo
 	 */
-	public function getDatabaseInfo()
+	public function getDatabaseAndRegexInfo()
 	{
 	    $sql=sprintf("select * from site where `setting`='dbversion'");
 	    $db = new DB;
@@ -125,10 +153,16 @@ class DashData
 	    # $version = $data['value'];
 	    # now, we want just the numbers as the version is stored as '#Rev: number $'
 	    preg_match('/[0-9]+/', $data['value'], $version);
+	    
+	    $sql=sprintf("select * from site where `setting`='latestregexrevision'");
+	    $db = new DB;
+	    $data = $db->queryOneRow($sql);
 
 	    printf('<span class="icon32 icon-blue icon-gear"></span>
-			<div>Database Version</div>
-			<div>%s</div>', $version[0]);
+			<div>Database Version: %s</div>
+			<div>Regex Version: %s</div>', $version[0], $data['value']);
+	    
+	    
 	}
     
 	/**
@@ -194,14 +228,14 @@ class DashData
 		}
 		
 		printf('<span class="icon32 icon-blue icon-gear"></span>
-			    <div>SVN Revision</div>
+			    <div>NewzNab SVN Revision</div>
 			    <div>%s</div>
 			    %s', $version_string, $notification_string);
 	    }
 	    else
 	    {
 		printf('<span class="icon32 icon-blue icon-gear"></span>
-			    <div>SVN Revision</div>
+			    <div>NewzNab SVN Revision</div>
 			    <div>%s</div>', "php subversion module is not installed");
 	    }
 	}
