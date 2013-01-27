@@ -42,7 +42,8 @@
     }
     else
     {
-        print '<div class="alert alert-error" id="savemessage"><strong>Error!</strong> The value for the NewzNab Directory does not appear to be valid.</div>';
+        printf ('<div class="alert alert-error" id="savemessage"><strong>Error!</strong> The value for the NewzNab Directory does not appear to be valid. I cannot find the NewzNab config.php file at: %s</div>',
+            $_POST['newznab_home'].'/www/config.php');
                 
         print '<script type="text/javascript">
             window.setTimeout(function() {

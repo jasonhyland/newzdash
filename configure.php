@@ -121,14 +121,13 @@ $configform = new ConfigForm;
 							  <?php $configform->getStatsCheckboxes(); ?> 
 							 						 
 
-							 
+							  <div id="results"></div>							 
 							  <div class="form-actions">
 								<button type="submit" class="btn btn-primary">Save changes</button>
-								<button class="btn">Cancel</button>
 							  </div>
 							</fieldset>
 						  </form>
-					      <div id="results"></div>
+					     
 					</div>
 				</div><!--/span-->
 			
