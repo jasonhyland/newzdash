@@ -4,7 +4,7 @@
 include('config.php');
 
 
-if (DB_TYPE!="mysql")
+if (!file_exists(NEWZNAB_HOME."/www/config.php"))
 {
 	# send the browser to the configuration page, something is wrong!
 	header("Location: configure.php");
