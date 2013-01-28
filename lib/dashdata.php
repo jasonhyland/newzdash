@@ -137,7 +137,7 @@ class DashData
 	    {
 		printf('<span class="icon32 icon-blue icon-gear"></span>
 			    <div>NewzDash Branch: %s</div>
-			    <div>Revision: %s</div>', unknown, "unknown");	    
+			    <div>Revision: %s</div>', "unknown", "unknown");	    
 			    
 	    }
 	}
