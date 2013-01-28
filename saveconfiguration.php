@@ -4,12 +4,13 @@
     # That is, there should be a config.php in the NEWZNAB_HOME/www directory
     if (file_exists($_POST['newznab_home']."/www/config.php"))
     {
+	$newconfig = "";
         $newconfig .= "<?php\n";
         
         $newconfig .= "define('NEWZNAB_URL','".$_POST['newznab_url']."');\n";
         $newconfig .= "define('NEWZNAB_HOME','".$_POST['newznab_home']."');\n";
         
-        $newconfig .= "define('SHOW_MOVIES','".$_POST['show_movies']."');\n";include(NEWZNAB_HOME.'/www/config.php');
+        $newconfig .= "define('SHOW_MOVIES','".$_POST['show_movies']."');\n";
         
         $newconfig .= "define('SHOW_TV','".$_POST['show_tv']."');\n";
         $newconfig .= "define('SHOW_MUSIC','".$_POST['show_music']."');\n";
@@ -27,6 +28,7 @@
         $newconfig .= "?>\n";
         
         $newconfigfile=__DIR__ . "/config.php";
+	
         file_put_contents($newconfigfile, $newconfig);
         
         
