@@ -47,59 +47,14 @@ $stats = new Stats;
 			</div>
 			<!-- breadcrumbs end -->
 			
-			<div class="row-fluid">
-				<div class="box span12">
-					<div class="box-header well" data-original-title>
-						<h2><i class="icon-th"></i> To Be Processed</h2>
-						<div class="box-icon">
 
-							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
-						  <!--						
-							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
-						-->
-						</div>
-					</div>
-					<div class="box-content">
-					  <?php $stats->buildPendingTable(); ?>   
-					</div>
-				</div>
-						
-			</div><!--/row-->
 
-			
-			<div class="row-fluid">
-				<div class="box span6">
-					<div class="box-header well" data-original-title>
-						<h2><i class="icon-th"></i> Releases per Category</h2>
-						<div class="box-icon">
+			<?php $stats->buildPendingTable(); ?>   
 
-							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
-						  <!--						
-							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
-						-->
-						</div>
-					</div>
-					<div class="box-content">
-					   <?php $stats->buildReleaseTable(); ?>
-					</div>
-				</div>
-						
-				<div class="box span6">
-					<div class="box-header well" data-original-title>
-						<h2><i class="icon-th"></i> Releases per Group</h2>
-						<div class="box-icon">
+			<?php $stats->buildReleaseTable(); ?>
 
-							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
-						  <!--						
-							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
-						-->
-						</div>
-					</div>
-					<div class="box-content">
-					   <?php $stats->buildGroupTable(); ?>
-					</div>
-				</div>						
-			</div><!--/row-->			
+			<?php $stats->buildGroupTable(); ?>
+		
 							
 						
 					

@@ -33,7 +33,7 @@ class ConfigForm
         public function getRecentCheckboxes()
         {
 		printf('<div class="control-group">
-								<label class="control-label" for="optionsShowLatest">Show Recent...<br>(not yet honored)</label>
+								<label class="control-label" for="optionsShowLatest">Show Recent...</label>
 								<div class="controls">
 								  <label class="checkbox">
 									<input type="checkbox" name="show_movies" id="optionsShowLatest" %s value="checked" >
@@ -73,7 +73,7 @@ class ConfigForm
         public function getStatsCheckboxes()
         {
 		printf('<div class="control-group">
-								<label class="control-label" for="optionsShowLatest">Show Statistics...<br>(not yet honored)</label>
+								<label class="control-label" for="optionsShowLatest">Show Statistics...</label>
 								<div class="controls">
 								  <label class="checkbox">
 									<input type="checkbox" name="show_processing" id="optionsShowLatest" %s value="checked" >

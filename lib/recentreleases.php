@@ -1,5 +1,5 @@
 <?php
-
+include('config.php');
 require_once(WWW_DIR."/lib/releases.php");
 require_once(WWW_DIR."/lib/groups.php");
 require_once(WWW_DIR."/lib/framework/db.php");
@@ -11,8 +11,18 @@ class RecentReleases
 {
 
 	
-        public function buildRecentTable($newznab_cat)
+        public function buildRecentTable($newznab_cat, $category)
         {
+		printf ('<div class="row-fluid">
+				<div class="box span12">
+				<div class="box-header well" data-original-title>
+						<h2><i class="icon-fire"></i> %s</h2>
+						<div class="box-icon">
+							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
+						</div>
+					</div>
+					<div class="box-content">', $category);
+					
 		echo '<table class="table table-striped table-bordered bootstrap-datatable datatable " >
 							  <thead>
 								  <tr>
@@ -24,7 +34,7 @@ class RecentReleases
 							  </thead>   
 							  <tbody>';
                                                           
-							  
+			  
 				
 		$category=new Category;
 		# get all the child categories
@@ -80,41 +90,66 @@ class RecentReleases
 
             echo '</tbody>
 						 </table>  ';
+						 
+	    print '</div>
+			       </div>
+			       </div>';		
         }
         
         public function buildRecentMoviesTable()
         {
-		RecentReleases::buildRecentTable(Category::CAT_PARENT_MOVIE);
+		if (SHOW_MOVIES==='checked')
+		{
+			RecentReleases::buildRecentTable(Category::CAT_PARENT_MOVIE, "Movies");
+		}
 	}	
 
 	public function buildRecentMusicTable()
         {
-		RecentReleases::buildRecentTable(Category::CAT_PARENT_MUSIC);
+		if (SHOW_MUSIC==='checked')
+		{
+			RecentReleases::buildRecentTable(Category::CAT_PARENT_MUSIC, "Music");
+		}
 	}
 	
 	public function buildRecentGameTable()
         {
-		RecentReleases::buildRecentTable(Category::CAT_PARENT_GAME);
+		if (SHOW_GAMES==='checked')
+		{
+			RecentReleases::buildRecentTable(Category::CAT_PARENT_GAME, "Games");
+		}
 	}		
 	
 	public function buildRecentTVTable()
         {
-		RecentReleases::buildRecentTable(Category::CAT_PARENT_TV);
+		if (SHOW_TV==='checked')
+		{
+			RecentReleases::buildRecentTable(Category::CAT_PARENT_TV, "Televison");
+		}
 	}
 	
 	public function buildRecentPCTable()
         {
-		RecentReleases::buildRecentTable(Category::CAT_PARENT_PC);
+		if (SHOW_PC==='checked')
+		{
+			RecentReleases::buildRecentTable(Category::CAT_PARENT_PC, "PC");
+		}
 	}		
 	
 	public function buildRecentOtherTable()
         {
-		RecentReleases::buildRecentTable(Category::CAT_PARENT_MISC);
+		if (SHOW_OTHER==='checked')
+		{
+			RecentReleases::buildRecentTable(Category::CAT_PARENT_MISC, "Other");
+		}
 	}
 	
 	public function buildRecentXXXTable()
         {
-		RecentReleases::buildRecentTable(Category::CAT_PARENT_XXX);
+		if (SHOW_XXX==='checked')
+		{
+			RecentReleases::buildRecentTable(Category::CAT_PARENT_XXX, "XXX");
+		}
 	}		
 }
         

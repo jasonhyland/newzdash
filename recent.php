@@ -51,134 +51,21 @@ $rr = new RecentReleases;
 			
 		
 					
-			<div class="row-fluid">
-				<div class="box span12">
-					<div class="box-header well" data-original-title>
-						<h2><i class="icon-film"></i> Movies</h2>
-						<div class="box-icon">
 
-							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
-						  <!--						
-							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
-						-->
-						</div>
-					</div>
-					<div class="box-content">
-					  <?php $rr->buildRecentMoviesTable(); ?> 
-					</div>
-				</div>
-						
-			</div><!--/row-->
+			<?php $rr->buildRecentMoviesTable(); ?> 
 
-			
-			<div class="row-fluid">
-				<div class="box span12">
-					<div class="box-header well" data-original-title>
-						<h2><i class="icon-headphones"></i> Music</h2>
-						<div class="box-icon">
+			<?php $rr->buildRecentMusicTable(); ?> 
 
-							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
-						  <!--						
-							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
-						-->
-						</div>
-					</div>
-					<div class="box-content">
-					  <?php $rr->buildRecentMusicTable(); ?> 
-					</div>
-				</div>
-						
-			</div><!--/row-->
+			<?php $rr->buildRecentTVTable(); ?> 
 
-			<div class="row-fluid">
-				<div class="box span12">
-					<div class="box-header well" data-original-title>
-						<h2><i class="icon-picture"></i> TV</h2>
-						<div class="box-icon">
+			<?php $rr->buildRecentGameTable(); ?> 
 
-							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
-						  <!--						
-							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
-						-->
-						</div>
-					</div>
-					<div class="box-content">
-					  <?php $rr->buildRecentTVTable(); ?> 
-					</div>
-				</div>
-			</div><!--/row-->
+			<?php $rr->buildRecentPCTable(); ?> 
 
-			<div class="row-fluid">
-				<div class="box span12">
-					<div class="box-header well" data-original-title>
-						<h2><i class="icon-flag"></i> Game</h2>
-						<div class="box-icon">
+			<?php $rr->buildRecentOtherTable(); ?> 
+		
+			<?php $rr->buildRecentXXXTable(); ?> 
 
-							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
-						  <!--						
-							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
-						-->
-						</div>
-					</div>
-					<div class="box-content">
-					  <?php $rr->buildRecentGameTable(); ?> 
-					</div>
-				</div>
-			</div><!--/row-->
-			
-			<div class="row-fluid">
-				<div class="box span12">
-					<div class="box-header well" data-original-title>
-						<h2><i class="icon-briefcase"></i> PC</h2>
-						<div class="box-icon">
-
-							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
-						  <!--						
-							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
-						-->
-						</div>
-					</div>
-					<div class="box-content">
-					  <?php $rr->buildRecentPCTable(); ?> 
-					</div>
-				</div>
-			</div><!--/row-->
-			
-			<div class="row-fluid">
-				<div class="box span12">
-					<div class="box-header well" data-original-title>
-						<h2><i class="icon-bookmark"></i> Other</h2>
-						<div class="box-icon">
-
-							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
-						  <!--						
-							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
-						-->
-						</div>
-					</div>
-					<div class="box-content">
-					  <?php $rr->buildRecentOtherTable(); ?> 
-					</div>
-				</div>
-			</div><!--/row-->			
-
-			<div class="row-fluid">
-				<div class="box span12">
-					<div class="box-header well" data-original-title>
-						<h2><i class="icon-fire"></i> XXX</h2>
-						<div class="box-icon">
-
-							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
-						  <!--						
-							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
-						-->
-						</div>
-					</div>
-					<div class="box-content">
-					  <?php $rr->buildRecentXXXTable(); ?> 
-					</div>
-				</div>
-			</div><!--/row-->
 			
 			
 					<!-- content ends -->
@@ -187,21 +74,6 @@ $rr = new RecentReleases;
 				
 		<hr>
 
-		<!--
-		<div class="modal hide fade" id="myModal">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">×</button>
-				<h3>Settings</h3>
-			</div>
-			<div class="modal-body">
-				<p>Here settings can be configured...</p>
-			</div>
-			<div class="modal-footer">
-				<a href="#" class="btn" data-dismiss="modal">Close</a>
-				<a href="#" class="btn btn-primary">Save changes</a>
-			</div>
-		</div>
-		-->
 
 	  <?php include 'includes/bottombar.php'; ?>
 		
