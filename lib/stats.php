@@ -13,7 +13,7 @@ class Stats
         
         public function buildReleaseTable()
         {
-	    if (SHOW_RPC!='checked')
+	    if (!defined('SHOW_RPC') || SHOW_RPC!='checked')
 	    {
 		return;
 	    }
@@ -72,7 +72,7 @@ class Stats
         
         public function buildGroupTable()
         {
-	    if (SHOW_RPG!='checked')
+	    if (!defined('SHOW_RPG') || SHOW_RPG!='checked')
 	    {
 		return;
 	    }
@@ -132,7 +132,7 @@ class Stats
         
         public function buildPendingTable()
         {
-	    if (SHOW_PROCESSING!='checked')
+	    if (!defined('SHOW_PROCESSING') || SHOW_PROCESSING!='checked')
 	    {
 		return;
 	    }

@@ -98,7 +98,7 @@ class RecentReleases
         
         public function buildRecentMoviesTable()
         {
-		if (SHOW_MOVIES==='checked')
+		if (defined('SHOW_MOVIES') && SHOW_MOVIES==='checked')
 		{
 			RecentReleases::buildRecentTable(Category::CAT_PARENT_MOVIE, "Movies");
 		}
@@ -106,7 +106,7 @@ class RecentReleases
 
 	public function buildRecentMusicTable()
         {
-		if (SHOW_MUSIC==='checked')
+		if (defined('SHOW_MUSIC') && SHOW_MUSIC==='checked')
 		{
 			RecentReleases::buildRecentTable(Category::CAT_PARENT_MUSIC, "Music");
 		}
@@ -114,7 +114,7 @@ class RecentReleases
 	
 	public function buildRecentGameTable()
         {
-		if (SHOW_GAMES==='checked')
+		if (defined('SHOW_GAMES') && SHOW_GAMES==='checked')
 		{
 			RecentReleases::buildRecentTable(Category::CAT_PARENT_GAME, "Games");
 		}
@@ -122,7 +122,7 @@ class RecentReleases
 	
 	public function buildRecentTVTable()
         {
-		if (SHOW_TV==='checked')
+		if (defined('SHOW_TV') && SHOW_TV==='checked')
 		{
 			RecentReleases::buildRecentTable(Category::CAT_PARENT_TV, "Televison");
 		}
@@ -130,7 +130,7 @@ class RecentReleases
 	
 	public function buildRecentPCTable()
         {
-		if (SHOW_PC==='checked')
+		if (defined('SHOW_PC') && SHOW_PC==='checked')
 		{
 			RecentReleases::buildRecentTable(Category::CAT_PARENT_PC, "PC");
 		}
@@ -138,7 +138,7 @@ class RecentReleases
 	
 	public function buildRecentOtherTable()
         {
-		if (SHOW_OTHER==='checked')
+		if (defined('SHOW_OTHER') && SHOW_OTHER==='checked')
 		{
 			RecentReleases::buildRecentTable(Category::CAT_PARENT_MISC, "Other");
 		}
@@ -146,7 +146,7 @@ class RecentReleases
 	
 	public function buildRecentXXXTable()
         {
-		if (SHOW_XXX==='checked')
+		if (defined('SHOW_XXX') && SHOW_XXX==='checked')
 		{
 			RecentReleases::buildRecentTable(Category::CAT_PARENT_XXX, "XXX");
 		}

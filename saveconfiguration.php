@@ -10,18 +10,88 @@
         $newconfig .= "define('NEWZNAB_URL','".$_POST['newznab_url']."');\n";
         $newconfig .= "define('NEWZNAB_HOME','".$_POST['newznab_home']."');\n";
         
-        $newconfig .= "define('SHOW_MOVIES','".$_POST['show_movies']."');\n";
+	if (isset($_POST['show_movies']))
+	{
+	    $newconfig .= "define('SHOW_MOVIES','".$_POST['show_movies']."');\n";
+	}
+	else
+	{
+	    $newconfig .= "define('SHOW_MOVIES','');\n";
+	}
+	if (isset($_POST['show_tv']))
+	{
+	    $newconfig .= "define('SHOW_TV','".$_POST['show_tv']."');\n";
+	}
+	else
+	{
+	    $newconfig .= "define('SHOW_TV','');\n";
+	}	
+	if (isset($_POST['show_music']))
+	{
+	    $newconfig .= "define('SHOW_MUSIC','".$_POST['show_music']."');\n";
+	}
+	else
+	{
+	    $newconfig .= "define('SHOW_MUSIC','');\n";
+	}	
+	if (isset($_POST['show_games']))
+	{
+	    $newconfig .= "define('SHOW_GAMES','".$_POST['show_games']."');\n";
+	}
+	else
+	{
+	    $newconfig .= "define('SHOW_GAMES','');\n";
+	}	
+	if (isset($_POST['show_pc']))
+	{
+	    $newconfig .= "define('SHOW_PC','".$_POST['show_pc']."');\n";
+	}
+	else
+	{
+	    $newconfig .= "define('SHOW_PC','');\n";
+	}	
+        if (isset($_POST['show_other']))
+	{
+	    $newconfig .= "define('SHOW_OTHER','".$_POST['show_other']."');\n";
+	}
+	else
+	{
+	    $newconfig .= "define('SHOW_OTHER','');\n";
+	}	
+	if (isset($_POST['show_xxx']))
+	{
+	    $newconfig .= "define('SHOW_XXX','".$_POST['show_xxx']."');\n";
+	}
+	else
+	{
+	    $newconfig .= "define('SHOW_XXX','');\n";
+	}	
         
-        $newconfig .= "define('SHOW_TV','".$_POST['show_tv']."');\n";
-        $newconfig .= "define('SHOW_MUSIC','".$_POST['show_music']."');\n";
-        $newconfig .= "define('SHOW_GAMES','".$_POST['show_games']."');\n";
-        $newconfig .= "define('SHOW_PC','".$_POST['show_pc']."');\n";
-        $newconfig .= "define('SHOW_OTHER','".$_POST['show_other']."');\n";
-        $newconfig .= "define('SHOW_XXX','".$_POST['show_xxx']."');\n";
-        
-        $newconfig .= "define('SHOW_PROCESSING','".$_POST['show_processing']."');\n";
-        $newconfig .= "define('SHOW_RPC','".$_POST['show_rpc']."');\n";
-        $newconfig .= "define('SHOW_RPG','".$_POST['show_rpg']."');\n";
+	if (isset($_POST['show_processing']))
+	{
+	    $newconfig .= "define('SHOW_PROCESSING','".$_POST['show_processing']."');\n";
+	}
+	else
+	{
+	    $newconfig .= "define('SHOW_PROCESSING','');\n";
+	}
+	if (isset($_POST['show_rpc']))
+	{
+	    $newconfig .= "define('SHOW_RPC','".$_POST['show_rpc']."');\n";
+	}
+	else
+	{
+	    $newconfig .= "define('SHOW_RPC','');\n";
+	}
+	if (isset($_POST['show_rpg']))
+	{
+	    $newconfig .= "define('SHOW_RPG','".$_POST['show_rpg']."');\n";
+	}
+	else
+	{
+	    $newconfig .= "define('SHOW_RPG','');\n";
+	}	
+
         
         $newconfig .= "include(NEWZNAB_HOME.'/www/config.php');\n";
         
